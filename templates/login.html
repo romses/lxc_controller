@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class=loginpage>
+  <h2>Login</h2>
+  {% if error %}<p class=error><strong>Error:</strong> {{ error }}{% endif %}
+  {% if msg %}<p class=error><strong>Logged in User:</strong> {{ msg }}{% endif %}
+  <form action="{{ url_for('login') }}" method=post>
+    <dl>
+      <dt>Username:
+      <dd><input type=text name=username>
+      <dt>Password:
+      <dd><input type=password name=password>
+      <dt>&nbsp;
+      <dd><input class="btn btn-sm btn-primary" aria-label="Left Align" type=submit value=Login>
+    </dl>
+  </form>
+</div>
+{% endblock %}

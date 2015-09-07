@@ -1,0 +1,113 @@
+{% extends "layout.html" %}
+{% block body %}
+  {% if session.logged_in %}
+  {% endif %}
+    <table class="entries table table-stripped">
+      <tr>
+        <th>Name</th><th>State</th><th>IP</th><th>Mem. Usage</th><th>Actions</th><th></th>
+      </tr>
+    {% for entry in entries %}
+      {% if entry.state == "RUNNING" %}
+    <tr class="success">
+      {% else %}
+    <tr class="error">
+      {% endif %}
+      <td><a href="/container/edit/{{ entry.name }}">{{ entry.name }}</a></td>
+      <td>{{ entry.state }}</td>
+      <td>{{ entry.ip or "-"}}</td>
+      <td>{{ entry.mem }} Mib</td>
+      <td>
+          <div class="btn-group-xs btn-group" role="group" aria-label="Center">
+            <button type="button" class="btn btn-primary" aria-label="Left Align" onclick="start('{{ entry.name }}')">
+              <span class="glyphicon glyphicon glyphicon-play" aria-hidden="true"></span>
+            </button>
+            <button type="button" class="btn btn-primary" aria-label="Left Align" onclick="alert('Not Implemented')">
+              <span class="glyphicon glyphicon glyphicon-pause" aria-hidden="true"></span>
+            </button>
+            <button type="button" class="btn btn-primary" aria-label="Left Align" onclick="stop('{{ entry.name }}')">
+              <span class="glyphicon glyphicon glyphicon-stop" aria-hidden="true"></span>
+            </button>
+            <button type="button" class="btn btn-primary" aria-label="Left Align" onclick="alert('Not Implemented')">
+              <span class="glyphicon glyphicon glyphicon-save" aria-hidden="true"></span>
+            </button>
+            <button type="button" class="btn btn-primary" aria-label="Left Align" onclick="alert('Not Implemented')">
+              <span class="glyphicon glyphicon glyphicon-open" aria-hidden="true"></span>
+            </button>
+            <button type="button" class="btn btn-danger" aria-label="Left Align" onclick="confirm('{{ entry.name }}',function(){location.href='/container/delete/{{ entry.name }}'});">
+              <span class="glyphicon glyphicon glyphicon-trash" aria-hidden="true"></span>
+            </button>
+          </div>
+      </td>
+      <td>{% if entry.warning %}<span class="glyphicon glyphicon-warning-sign" data-placement="bottom" title="{{ entry.warning }}" data-toggle="tooltip"></span>{% endif %}</td>
+    </tr>
+    {% else %}
+    {% endfor %}
+    </table>
+    <button type="button" class="btn btn-xs btn-primary" aria-label="Left Align" data-toggle="modal" data-target="#addContainer" onclick="clearContainer()">add Container</button>
+
+<!-- Modal Dialog -->
+    <div class="modal fade" id="addContainer" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" style="display: none;">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <form action="/container/add" method="post" id="containerform">
+            <div class="modal-header">
+              <!-- Form Name -->
+              <legend>Add Container</legend>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="control-group">
+                    <label class="control-label" for="name">Name</label>
+                    <div class="controls">
+                      <input id="name" name="name" type="text" placeholder="Name" class="input-xlarge form-control" maxlength="25">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="control-group">
+                    <div class="controls">
+                      <select id="type" name="type" size="1" class="input-xlarge form-control">
+                        <option value="clon" selected>Clon</option>
+                        <option value="download">download</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="control-group">
+                    <div class="controls">
+                      <select id="system" name="system" size="1" class="input-xlarge form-control">
+                        <!-- Option-Tags werden dynamisch hinzugefügt -->
+                      </select>
+                      <select id="version" name="version" size="1" class="input-xlarge form-control">
+                        <!-- Option-Tags werden dynamisch hinzugefügt -->
+                      </select>
+                      <select id="architecture" name="architecture" size="1" class="input-xlarge form-control">
+                        <!-- Option-Tags werden dynamisch hinzugefügt -->
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <!-- Button (Double) -->
+              <div class="control-group">
+                <label class="control-label" for="action"></label>
+                <div class="controls">
+                  <button id="action" name="action" class="btn btn-primary">Save</button>
+                  <button id="doublebutton2-0" name="doublebutton2-0" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+ <script language="javascript" type="text/javascript" src="{{ url_for('static',filename='js/container-list.js')}}"></script>
+{% endblock %}

@@ -1,0 +1,277 @@
+{% extends "layout.html" %}
+{% block body %}
+  <script language="javascript" type="text/javascript" src="{{ url_for('static',filename='js/functions.js')}}"></script>
+  {% if session.logged_in %}
+  {% endif %}
+    <div class="container-fluid">
+      <div class="row"> <!-- row 1 -->
+        <div class="panel panel-primary"> <!-- panel 1 -->
+          <div class="panel-heading">
+            {{ entries.name }}
+          </div>
+          <div class="panel-body">
+            <table class="entries table table-stripped">
+              <tr>
+                <th>State</th><th>IP</th><th>Mem. Usage</th>
+              </tr>
+              <tr>
+                <td>{{ entries.state.state }}</td>
+                <td>{{ entries.state.ip }}</td>
+                <td>{{ entries.state.mem }} Mib</td>
+              </tr>
+            </table>
+          </div>
+        </div> <!-- panel 1 -->
+      </div> <!-- row spacer 1 -->
+      <div class="row"> <!-- row 2 -->
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            Actions
+          </div>
+          <div class="panel-body"
+            <div class="btn-group" role="group" aria-label="Center">
+              <button type="button" class="btn btn-primary" aria-label="Left Align" onclick="alert('Not Implemented')">
+                <span class="glyphicon glyphicon glyphicon-play" aria-hidden="true"></span> Start
+              </button>
+              <button type="button" class="btn btn-primary" aria-label="Left Align" onclick="alert('Not Implemented')">
+                <span class="glyphicon glyphicon glyphicon-pause" aria-hidden="true"></span> Pause
+              </button>
+              <button type="button" class="btn btn-primary" aria-label="Left Align" onclick="alert('Not Implemented')">
+                <span class="glyphicon glyphicon glyphicon-stop" aria-hidden="true"></span> Stop
+              </button>
+              <button type="button" class="btn btn-primary" aria-label="Left Align" onclick="alert('Not Implemented')">
+                <span class="glyphicon glyphicon glyphicon-save" aria-hidden="true"></span> Backup
+              </button>
+              <button type="button" class="btn btn-primary" aria-label="Left Align" onclick="alert('Not Implemented')">
+                <span class="glyphicon glyphicon glyphicon-open" aria-hidden="true"></span> Restore
+              </button>
+              <button type="button" class="btn btn-danger" aria-label="Left Align" onclick="alert('Not Implemented')">
+                <span class="glyphicon glyphicon glyphicon-trash" aria-hidden="true"></span> Delete
+              </button>
+            </div>
+          </div>
+        </div>
+      </div> <!-- row 2 -->
+      <div class="row"> <!-- row 3 -->
+        <div class="col-md-6">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">
+                Users
+              </h3>
+            </div>
+            <div class="panel-body">
+              <table class="entries table table-stripped">
+                <tr>
+                  <th>User</th>
+                  <th>Password</th>
+                  <th></th>
+                </tr>
+      {% for entry in entries.users %}
+                <tr>
+                  <td>{{ entry[0] }}</td>
+                  <td> *** </td>
+                  <td>
+                    <div class="btn-group" role="group" aria-label="...">
+                      <button type="button" class="btn btn-xs btn-primary" data-toggle="modal" data-target="#adduser" onclick="edituser('{{ entry[0] }}','{{ entry[1] }}','{{entry[2] }}')">
+                        <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit
+                      </button>
+                      <button type="button" class="btn btn-xs btn-danger" onclick="confirm('Delete user {{ entry[0] }}',function(){location.href='/user/delete/{{ entry[0] }}'});">
+                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Delete
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+      {% endfor %}
+              </table>
+              <div class="spacer">
+                <button type="button" class="btn btn-primary" aria-label="Left Align" data-toggle="modal" data-target="#adduser" onclick=clearuser()>
+                  <span class="glyphicon glyphicon glyphicon-plus" aria-hidden="true"></span> Add User
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">
+                Domains
+              </h3>
+            </div>
+            <div class="panel-body">
+              <table class="entries table table-stripped">
+                <tr>
+                  <th>Domain</th>
+                  <th>WWW</th>
+                  <th>SSL</th>
+                  <th></th>
+                </tr>
+      {% for entry in entries.domains %}
+                <tr>
+                  <td>{{ entry[0] }}</td>
+      {% if entry[1]==1 %}
+                  <td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+      {% else %}
+                  <td><span class="glyphicon glyphicon-minus" aria-hidden="true"></span></td>
+      {% endif %}
+      {% if entry[2] == "" %}
+                  <td><span class="glyphicon glyphicon-minus" aria-hidden="true"></span></td>
+      {% else %}
+                  <td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+      {% endif %}
+                  <td>
+                    <div class="btn-group" role="group" aria-label="...">
+                      <button type="button" class="btn btn-xs btn-primary" data-toggle="modal" data-target="#adddomain" onclick="editdomain('{{ entry[0] }}','{{ entry[1] }}','{{entry[2] }}')">
+                        <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit
+                      </button>
+                      <button type="button" class="btn btn-xs btn-danger" onclick="confirm('Delete domain {{ entry[0] }}',function(){location.href='/domain/delete/{{ entry[0] }}'});">
+                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Delete
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+      {% endfor %}
+              </table>
+              <div class="spacer">
+                <button type="button" class="btn btn-primary" aria-label="Left Align" data-toggle="modal" data-target="#adddomain" onclick=cleardomain()>
+                  <span class="glyphicon glyphicon glyphicon-plus" aria-hidden="true"></span> Add Domain
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> <!-- row 3 -->
+      <div class="row"> <!-- row 4 -->
+        <div class="col-md-12">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              Databases
+            </div>
+            <div class="panel-body">
+              <table class="entries table table-stripped">
+                <tr>
+                  <th>Database</th>
+                  <th>User</th>
+                  <th>Password</th>
+                  <th></th>
+                </tr>
+                <tr>
+                  <td>Dummy</td>
+                  <td>Dummy</td>
+                  <td>Dummy</td>
+                  <td>Dummy</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div> <!-- row 4 -->
+      <div class="row spacer"> <!-- row 5 -->
+        <div class="col-md-12">
+          <button type="button" class="btn btn-primary" aria-label="Left Align" onclick='location.href="/"'>
+            Back
+          </button>
+        </div>
+      </div> <!-- row 5 -->
+    </div>
+
+    <!-- Modal Dialoges -->
+
+    <div class="modal fade" id="adduser" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <form action="/user/add/{{ entries.name }}" method="post" id="userform">
+            <div class="modal-header">
+              <!-- Form Name -->
+              <legend>Add User</legend>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="control-group">
+                    <label class="control-label" for="user">Username</label>
+                    <div class="controls">
+                      <input id="user" name="user" type="text" placeholder="Username" class="input-xlarge form-control">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="control-group">
+                    <label class="control-label" for="password">Password</label>
+                    <div class="controls">
+                      <input id="password" name="password" type="password" placeholder="Password" class="input-xlarge form-control">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+            <!-- Button (Double) -->
+              <div class="control-group">
+                <label class="control-label" for="action"></label>
+                <div class="controls">
+                  <button id="action" name="action" class="btn btn-primary">Save</button>
+                  <button id="doublebutton2-0" name="doublebutton2-0" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="modal fade" id="adddomain" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <form action="/domain/add/{{ entries.name }}" method="post" id="domainform">
+            <div class="modal-header">
+              <!-- Form Name -->
+              <legend>Add Domain</legend>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-md-8">
+                  <div class="control-group">
+                    <label class="control-label" for="user">Domain</label>
+                    <div class="controls">
+                      <input id="domain" name="domain" type="text" placeholder="domain.tld" class="input-xlarge form-control">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <label class="control-label" for="password">WWW</label>
+                  <div class="controls">
+                    <input id="www" name="www" type="checkbox" placeholder="Include www subdomain" class="form-control yesnoswitch">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="control-group">
+                    <label class="control-label" for="password">Certificate</label>
+                    <div class="controls">
+                      <textarea id="certificate" name="certificate" placeholder="certifikate and key blob" class="input-xlarge form-control"></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+            <!-- Button (Double) -->
+              <div class="control-group">
+                <label class="control-label" for="action"></label>
+                <div class="controls">
+                  <button id="action" name="action" class="btn btn-primary">Save</button>
+                  <button id="doublebutton2-0" name="doublebutton2-0" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,125 @@
+body            { font-family: sans-serif; background: #eee; }
+a, h1, h2       { color: #377ba8; }
+h1, h2          { font-family: 'Georgia', serif; margin: 0; }
+h1              { border-bottom: 2px solid #eee; }
+h2              { font-size: 1.2em; }
+
+.page           { margin: 2em auto; width: 75em; border: 5px solid #ccc;
+                  padding: 0.8em; background: white; }
+.loginpage      { margin: 2em auto; width: 35em; border: 2px solid #ccc;
+                  padding: 0.8em; background: white; }
+.entries        { list-style: none; margin: 0; padding: 0; }
+.entries li     { margin: 0.8em 1.2em; }
+.entries li h2  { margin-left: -1em; }
+.add-entry      { font-size: 0.9em; border-bottom: 1px solid #ccc; }
+.add-entry dl   { font-weight: bold; }
+.metanav        { text-align: right; font-size: 0.8em; padding: 0.3em;
+                  margin-bottom: 1em; background: #fafafa; }
+.flash          { background: #cee5F5; padding: 0.5em;
+                  border: 1px solid #aacbe2; }
+.error          { background: #f0d6d6; padding: 0.5em; }
+
+.headline	{ margin-right: 10px;}
+
+.spacer		{ margin-top: 40px; }
+
+.lblUser, .user {
+    position: absolute;
+    left: 10px;
+    top: 30px;
+}
+.user {
+    left: 110px;
+}
+
+.lblPassword, .password {
+    position: absolute;
+    left: 10px;
+    top: 80px;
+}
+.password {
+    left: 110px;
+}
+
+
+.lblDomain, .domainName {
+    position: absolute;
+    left: 10px;
+    top: 30px;
+}
+.domainName {
+    left: 130px;
+}
+
+.lblSSL, .ssl {
+    position: absolute;
+    left: 10px;
+    top: 80px;
+}
+.ssl {
+    left: 130px;
+}
+
+.lblWww, .www {
+    position: absolute;
+    left: 10px;
+    top: 125px;
+}
+.www {
+    left: 65px;
+}
+
+.submit, .cancel {
+    position: absolute;
+    top: 170px;
+    right: 95px;
+    width: 70px;
+    height: 28px;
+}
+.cancel {
+    right: 10px;
+}
+
+#system, #version, #architecture {
+    display: none;
+    width: 165px;
+    margin-top: 20px;
+    margin-right: 20px;
+    float: left;
+}
+
+#type {
+    margin-top: 20px;
+}
+
+
+.options {
+  display: none;
+  height: 100px;
+  position: absolute;
+  background: rgb(250, 250, 250) none repeat scroll 0% 0%;
+  width: 70px;
+  right: 331px;
+  top: 108px;
+  text-align: left;
+  padding-left: 10px;
+  border-top: 1px solid black;
+}
+
+.headline {
+  margin-right: 24px;
+}
+
+.menuPoints {
+  margin-bottom: 10px;
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  top: 18px;
+  left: 895px;
+  min-width: 120px;
+}

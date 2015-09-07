@@ -1,0 +1,95 @@
+function start(name){
+	uri="/container/start/" + name
+	$.get(uri,function(){
+		window.location.reload()
+	});
+}
+
+function stop(name){
+	uri="/container/stop/" + name
+	$.get(uri,function(){
+		window.location.reload()
+	});
+}
+
+ /**
+ * Created by Marvin Jaworski on 28.08.2015.
+ */
+
+//----------------Einblenden der Betriebssysstemfelder----------------
+
+$('#type').change(function() {
+    var val = $('#type').val();
+    if(val == 'neuer') {
+        visibil();
+    }else
+    if(val == 'clon') {
+        hide();
+    }
+});
+
+function visibil() {
+    $('#system').css("display", "block");
+    $('#version').css("display", "block");
+    $('#architecture').css("display", "block");
+
+    setSystems();
+}
+
+function hide() {
+    $('#system').css("display", "none");
+    $('#version').css("display", "none");
+    $('#architecture').css("display", "none");
+}
+
+
+//--------Set options for Systems, Versions and Architectures----------
+
+var obj = null;
+
+//Liest json datei
+$.getJSON('/lxc/images', function(data){
+    obj = data;
+}, setSystems);
+
+$('#system').change(function() {
+    setVersions();
+});
+$('#version').change(function() {
+    setArchitecture();
+});
+
+function setSystems() {
+    $('#system').html('');
+
+    $.each(obj, function( key, value ) {
+        $('#system').append(new Option(key, key));
+    });
+
+    setVersions();
+}
+
+function setVersions() {
+    $('#version').html('');
+
+    var system = $('#system').val();
+    $.each(obj[system], function( key, value ) {
+        $('#version').append(new Option(key, key));
+    });
+
+    setArchitecture();
+}
+
+function setArchitecture() {
+    $('#architecture').html('');
+
+    var system = $('#system').val();
+    var version = $('#version').val();
+    $.each(obj[system][version], function( key, value ) {
+        $('#architecture').append(new Option(value, value));
+    });
+}
+
+
+//--------------------------clear Container--------------------------
+
