@@ -39,27 +39,64 @@ def listcontainer():
 @app.route('/databases/list')
 @requires_auth
 def listdatabases():
-    return "Ok"
-
-@app.route('/database/add/<name>',methods=['POST'])
-@requires_auth
-def editdatabases(name):
-    if 'user' not in request.form.keys():
-        return redirect('/container/edit/'+name)
-    if 'password' not in request.form.keys():
-        return redirect('/container/edit/'+name)
-
-    user=request.form['user']
-    password=request.form['password']
-
     con = mdb.connect(options['DB_HOST'], options['DB_USERNAME'], options['DB_PASSWORD'], options['DB']);
     cur = con.cursor()
-    cur.execute('INSERT INTO db (user,password,container) VALUES (%s,%s,%s) ON DUPLICATE KEY UPDATE password=VALUES(password),container=VALUES(container)',(user,password,name))
-    con.commit()
+
+    entries=[]
+    cur.execute('SELECT user,password,container FROM db')
     rows = cur.fetchall()
-    con.close()
+
+    for row in rows:
+        c={'name':row[0],
+           'password':row[1],
+           'container':row[2]
+        }
+        entries.append(c)
+
+    return render_template('list_databases.tmpl',entries=entries)
+
+
+@app.route('/database/add',methods=['POST'])
+@requires_auth
+def adddatabases():
+    print("adddatabase")
+    print(request.form)
+
+    if 'user' in request.form.keys():
+        user=request.form['user']
+    else:
+        flash("Error: User not given")
+        print("Error: User not given")
+        return redirect(request.headers.get("Referer"))
+
+    if 'password' in request.form.keys():
+        password=request.form['password']
+    else:
+        flash("Error: Password not given")
+        print("Error: Password not given")
+        return redirect(request.headers.get("Referer"))
+
+    if 'container' in request.form.keys():
+        name=request.form['container']
+    else:
+        flash("Error: Container not given")
+        print("Error: Container not given")
+        return redirect(request.headers.get("Referer"))
+
+    try:
+        con = mdb.connect(options['DB_HOST'], options['DB_USERNAME'], options['DB_PASSWORD'], options['DB']);
+        cur = con.cursor()
+        cur.execute('INSERT INTO db (user,password,container) VALUES (%s,%s,%s) ON DUPLICATE KEY UPDATE password=VALUES(password),container=VALUES(container)',(user,password,name))
+        con.commit()
+        rows = cur.fetchall()
+    except mdb.Error as e:
+        logging.warn(e)
+    finally:
+        con.close()
     updateDatabases()
-    return redirect('/container/edit/'+name)
+
+    return redirect(request.headers.get("Referer"))
+#    return redirect('/container/edit/'+name)
 
 @app.route('/database/delete/<name>')
 @requires_auth
@@ -85,9 +122,9 @@ def deletedatabases(name):
         print(e)
 
     con.close()
-   
-    return redirect('/container/edit/'+domain)
 
+    return redirect(request.headers.get("Referer"))
+#    return redirect('/container/edit/'+domain)
 
 
 @app.route('/')
@@ -234,10 +271,14 @@ def adminadd():
     con = mdb.connect(options['DB_HOST'], options['DB_USERNAME'], options['DB_PASSWORD'], options['DB']);
     cur = con.cursor()
 
-    entries=[]
-    password=bcrypt.hashpw(request.form['password'],bcrypt.gensalt())
-    cur.execute('INSERT INTO users (user,password) VALUES (%s,%s) ON DUPLICATE KEY UPDATE password=VALUES(password)',(request.form['username'],request.form['password']))
-    con.commit()    
+    try:
+        password=bcrypt.hashpw(request.form['password'],bcrypt.gensalt())
+        cur.execute('INSERT INTO users (user,password) VALUES (%s,%s) ON DUPLICATE KEY UPDATE password=VALUES(password)',(request.form['user'],request.form['password']))
+        con.commit()    
+    except mdb.Error as e:
+        print(e)
+
+    con.close()
     return redirect(url_for('adminlist'))
 
 @app.route('/admin/delete/<name>')
@@ -494,34 +535,32 @@ def updateDatabases():
             cur.execute("CREATE DATABASE IF NOT EXISTS {db}".format(db=row[0]))
             con.commit()
         except  mdb.Error as e:
-            print("Creating "+row[0]+" failed")
-            print("Exception ")
-            print(e)
+            logging.warn("Creating "+row[0]+" failed")
+            logging.warn(e)
 
         try:
             cur.execute("CREATE USER %s IDENTIFIED BY %s",(row[0],row[1]))
             con.commit()
         except  mdb.Error as e:
-            print("Warning: User existing. Trying to update password")
+            logging.warn("Warning: User existing. Trying to update password")
             try:
                 cur.execute("SET PASSWORD FOR %s@'%%' = PASSWORD(%s)",(row[0],row[1]))
                 con.commit()
             except mdb.Error as e:
-                print("Cannot update Password")
-                print(e)
+                logging.warn("Cannot update Password")
+                logging.warn(e)
 
         try:
             cur.execute("GRANT USAGE on *.* TO %s@'%%' IDENTIFIED BY %s",(row[0],row[1]))
             con.commit()
         except  mdb.Error as e:
-            print("Exception ")
-            print(e)
+            logging.warn(e)
 
         try:
             cur.execute("GRANT ALL ON {user}.* TO %s@'%%' IDENTIFIED BY %s".format(user=row[0]),(row[0],row[1]))
             con.commit()
         except  mdb.Error as e:
-            print(e)
+            logging.warn(e)
     con.close()
 
     return 0

@@ -2925,3 +2925,460 @@ WARNING:root:LXC-Controller started
 WARNING:root:LXC-Controller started
 WARNING:root:LXC-Controller started
 WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+ERROR:__main__:Exception on /database/add/ [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 63, in adddatabases
+    return redirect('/container/edit/'+name)
+NameError: name 'name' is not defined
+ERROR:__main__:Exception on /database/add/ [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 63, in adddatabases
+    return redirect('/container/edit/'+name)
+NameError: name 'name' is not defined
+ERROR:__main__:Exception on /database/add/ [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 63, in adddatabases
+    return redirect('/container/edit/'+name)
+NameError: name 'name' is not defined
+ERROR:__main__:Exception on /database/add/ [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 63, in adddatabases
+    return redirect('/container/edit/'+name)
+NameError: name 'name' is not defined
+WARNING:root:LXC-Controller started
+ERROR:__main__:Exception on /database/add [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 63, in adddatabases
+    return redirect('/container/edit/'+name)
+NameError: name 'name' is not defined
+WARNING:root:LXC-Controller started
+ERROR:__main__:Exception on /database/add [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 63, in adddatabases
+    return redirect('/container/edit/'+name)
+NameError: name 'name' is not defined
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+WARNING:root:Warning: User existing. Trying to update password
+ERROR:__main__:Exception on /container/edit/wertwetwet [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 193, in containeredit
+    entries = dict(name=name,state=lxclite.info(name))
+  File "/root/lxc-admin/lib/lxclite/__init__.py", line 81, in info
+    if not exists(container): raise ContainerDoesntExists('Container {} does not exist!'.format(container))
+lib.lxclite.ContainerDoesntExists: Container wertwetwet does not exist!
+ERROR:__main__:Exception on /container/edit/wertwetwet [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 193, in containeredit
+    entries = dict(name=name,state=lxclite.info(name))
+  File "/root/lxc-admin/lib/lxclite/__init__.py", line 81, in info
+    if not exists(container): raise ContainerDoesntExists('Container {} does not exist!'.format(container))
+lib.lxclite.ContainerDoesntExists: Container wertwetwet does not exist!
+WARNING:root:LXC-Controller started
+WARNING:root:Warning: User existing. Trying to update password
+ERROR:__main__:Exception on /container/edit/zzzzz [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 193, in containeredit
+    entries = dict(name=name,state=lxclite.info(name))
+  File "/root/lxc-admin/lib/lxclite/__init__.py", line 81, in info
+    if not exists(container): raise ContainerDoesntExists('Container {} does not exist!'.format(container))
+lib.lxclite.ContainerDoesntExists: Container zzzzz does not exist!
+WARNING:root:Warning: User existing. Trying to update password
+WARNING:root:Warning: User existing. Trying to update password
+WARNING:root:Warning: User existing. Trying to update password
+WARNING:root:Creating 66666 failed
+WARNING:root:(1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '66666' at line 1")
+WARNING:root:(1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '66666.* TO '66666'@'%' IDENTIFIED BY '6666'' at line 1")
+ERROR:__main__:Exception on /container/edit/6666 [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 193, in containeredit
+    entries = dict(name=name,state=lxclite.info(name))
+  File "/root/lxc-admin/lib/lxclite/__init__.py", line 81, in info
+    if not exists(container): raise ContainerDoesntExists('Container {} does not exist!'.format(container))
+lib.lxclite.ContainerDoesntExists: Container 6666 does not exist!
+WARNING:root:LXC-Controller started
+ERROR:__main__:Exception on /container/edit/webmail_macrocom_de [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 39, in decorated
+    ans=f(*args, **kwargs)
+  File "./lxc-admin.py", line 210, in containeredit
+    cur.execute('SELECT userid,passwd FROM ftpuser where container= %s',(name))
+NameError: name 'cur' is not defined
+WARNING:root:LXC-Controller started
+WARNING:root:Warning: User existing. Trying to update password
+ERROR:__main__:Exception on /container/edit/wertwert [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 193, in containeredit
+    entries = dict(name=name,state=lxclite.info(name))
+  File "/root/lxc-admin/lib/lxclite/__init__.py", line 81, in info
+    if not exists(container): raise ContainerDoesntExists('Container {} does not exist!'.format(container))
+lib.lxclite.ContainerDoesntExists: Container wertwert does not exist!
+WARNING:root:Warning: User existing. Trying to update password
+ERROR:__main__:Exception on /container/edit/erzterzerz [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 193, in containeredit
+    @requires_auth
+  File "/root/lxc-admin/lib/lxclite/__init__.py", line 81, in info
+    if not exists(container): raise ContainerDoesntExists('Container {} does not exist!'.format(container))
+lib.lxclite.ContainerDoesntExists: Container erzterzerz does not exist!
+WARNING:root:LXC-Controller started
+WARNING:root:Warning: User existing. Trying to update password
+ERROR:__main__:Exception on /container/edit/fff [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 195, in containeredit
+    entries = dict(name=name,state=lxclite.info(name))
+  File "/root/lxc-admin/lib/lxclite/__init__.py", line 81, in info
+    if not exists(container): raise ContainerDoesntExists('Container {} does not exist!'.format(container))
+lib.lxclite.ContainerDoesntExists: Container fff does not exist!
+WARNING:root:LXC-Controller started
+WARNING:root:Warning: User existing. Trying to update password
+WARNING:root:Creating 12345 failed
+WARNING:root:(1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '12345' at line 1")
+WARNING:root:(1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '12345.* TO '12345'@'%' IDENTIFIED BY '12345'' at line 1")
+ERROR:__main__:Exception on /container/edit/12345 [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 197, in containeredit
+    entries = dict(name=name,state=lxclite.info(name))
+  File "/root/lxc-admin/lib/lxclite/__init__.py", line 81, in info
+    if not exists(container): raise ContainerDoesntExists('Container {} does not exist!'.format(container))
+lib.lxclite.ContainerDoesntExists: Container 12345 does not exist!
+WARNING:root:LXC-Controller started
+WARNING:root:Warning: User existing. Trying to update password
+ERROR:__main__:Exception on /container/edit/MyPassword [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 197, in containeredit
+    entries = dict(name=name,state=lxclite.info(name))
+  File "/root/lxc-admin/lib/lxclite/__init__.py", line 81, in info
+    if not exists(container): raise ContainerDoesntExists('Container {} does not exist!'.format(container))
+lib.lxclite.ContainerDoesntExists: Container MyPassword does not exist!
+WARNING:root:LXC-Controller started
+WARNING:root:Warning: User existing. Trying to update password
+WARNING:root:Warning: User existing. Trying to update password
+WARNING:root:Warning: User existing. Trying to update password
+WARNING:root:Warning: User existing. Trying to update password
+WARNING:root:Warning: User existing. Trying to update password
+WARNING:root:Warning: User existing. Trying to update password
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+WARNING:root:Warning: User existing. Trying to update password
+WARNING:root:Warning: User existing. Trying to update password
+WARNING:root:Warning: User existing. Trying to update password
+WARNING:root:LXC-Controller started
+WARNING:root:Warning: User existing. Trying to update password
+WARNING:root:Warning: User existing. Trying to update password
+WARNING:root:Warning: User existing. Trying to update password
+WARNING:root:Warning: User existing. Trying to update password
+WARNING:root:Warning: User existing. Trying to update password
+WARNING:root:Warning: User existing. Trying to update password
+WARNING:root:Warning: User existing. Trying to update password
+WARNING:root:Warning: User existing. Trying to update password
+WARNING:root:Warning: User existing. Trying to update password
+ERROR:__main__:Exception on /container/edit/webmail_macrocom_de [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 232, in containeredit
+    return render_template('edit_container.tmpl',entries=entries)
+  File "/usr/local/lib/python3.4/dist-packages/flask/templating.py", line 128, in render_template
+    context, ctx.app)
+  File "/usr/local/lib/python3.4/dist-packages/flask/templating.py", line 110, in _render
+    rv = template.render(context)
+  File "/usr/local/lib/python3.4/dist-packages/jinja2/environment.py", line 989, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/usr/local/lib/python3.4/dist-packages/jinja2/environment.py", line 754, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/root/lxc-admin/templates/edit_container.tmpl", line 1, in top-level template code
+    {% extends "layout.html" %}
+  File "/root/lxc-admin/templates/layout.html", line 52, in top-level template code
+    {% block body %}
+  File "/root/lxc-admin/templates/edit_container.tmpl", line 176, in block "body"
+    <button type="button" class="btn btn-primary" aria-label="Left Align" data-toggle="modal" data-target="#adddatabase" onclick=cleardatabase({{entry.name}})>
+  File "/usr/local/lib/python3.4/dist-packages/jinja2/environment.py", line 408, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'entry' is undefined
+WARNING:root:Warning: User existing. Trying to update password
+WARNING:root:Warning: User existing. Trying to update password
+WARNING:root:Warning: User existing. Trying to update password
+WARNING:root:Warning: User existing. Trying to update password
+WARNING:root:Warning: User existing. Trying to update password
+WARNING:root:Warning: User existing. Trying to update password
+ERROR:__main__:Exception on /database/delete/entry.name [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 125, in deletedatabases
+    domain=rows[0][0]
+IndexError: tuple index out of range
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started

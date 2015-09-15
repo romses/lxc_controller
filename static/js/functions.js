@@ -3,9 +3,13 @@ function edituser(user,password,role){
 	$("#userform #password").val(password)
 }
 
-function editdatabase(user,password){
+function editdatabase(user,password,container){
+	console.log(user)
+	console.log(password)
+	console.log(container)
 	$("#databaseform #user").val(user)
 	$("#databaseform #dbpassword").val(password)
+	$("#databaseform #container").val(container)
 }
 
 function clearuser(){
@@ -29,9 +33,10 @@ function cleardomain(){
 	$("#romainform #www").bootstrapSwitch('state', 0);
 }
 
-function cleardatabase(){
+function cleardatabase(container){
         $("#databaseform #user").val("")
         $("#databaseform #dbpassword").val("")
+        $("#databaseform #container").val(container)
 }
 
 

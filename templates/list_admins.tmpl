@@ -13,7 +13,7 @@
           <button type="button" class="btn btn-primary" aria-label="Left Align" data-toggle="modal" data-target="#addAdmin" onclick="edituser('{{ entry.name }}','{{ entry.password }}')">
             <span class="glyphicon glyphicon glyphicon-edit" aria-hidden="true"></span> Edit
           </button>
-          <button type="button" class="btn btn-danger" aria-label="Left Align" onclick="location.href='/admin/delete/{{ entry.name }}';">
+          <button type="button" class="btn btn-danger" aria-label="Left Align" onclick="confirm('Delete user {{entry.name}}',function(){location.href='/admin/delete/{{entry.name}}'});">
             <span class="glyphicon glyphicon glyphicon-trash" aria-hidden="true"></span> Delete
           </button>
         </div>

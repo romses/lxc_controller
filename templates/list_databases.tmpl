@@ -3,17 +3,20 @@
 <script language="javascript" type="text/javascript" src="{{ url_for('static',filename='js/functions.js')}}"></script>
     <table class="entries table table-stripped">
       <tr>
-        <th>Name</th><th>Password</th><th>Actions</th>
+        <th>User/Database</th><th>Password</th><th>Container</th><th>Actions</th>
       </tr>
     {% for entry in entries %}
       <td>{{ entry.name }}</td>
-      <td>***</td>
+      <td>{{ entry.password }}</td>
+      <td>
+        <a href='/container/edit/{{ entry.container }}'>{{ entry.container }}</a>
+      </td>
       <td>
         <div class="btn-group-xs btn-group" role="group" aria-label="Center">        
-          <button type="button" class="btn btn-primary" aria-label="Left Align" data-toggle="modal" data-target="#addAdmin" onclick="edituser('{{ entry.name }}','{{ entry.password }}')">
+          <button type="button" class="btn btn-primary" aria-label="Left Align" data-toggle="modal" data-target="#adddatabase" onclick="editdatabase('{{ entry.name }}','{{ entry.password }}','{{entry.container}}')">
             <span class="glyphicon glyphicon glyphicon-edit" aria-hidden="true"></span> Edit
           </button>
-          <button type="button" class="btn btn-danger" aria-label="Left Align" onclick="location.href='/admin/delete/{{ entry.name }}';">
+          <button type="button" class="btn btn-danger" aria-label="Left Align" onclick="confirm('Delete database {{entry.name}}',function(){location.href='/database/delete/{{entry.name}}'});">
             <span class="glyphicon glyphicon glyphicon-trash" aria-hidden="true"></span> Delete
           </button>
         </div>
@@ -22,13 +25,13 @@
     {% else %}
     {% endfor %}
     </table>
-    <button type="button" class="btn btn-xs btn-primary" aria-label="Left Align" data-toggle="modal" data-target="#addAdmin" onclick="clearuser()">add Admin</button>
+    <button type="button" class="btn btn-xs btn-primary" aria-label="Left Align" data-toggle="modal" data-target="#adddatabase" onclick="cleardatabase()">add Database</button>
 
 <!-- Modal Dialog -->
-    <div class="modal fade" id="addAdmin" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" style="display: none;">
+    <div class="modal fade" id="adddatabase" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" style="display: none;">
       <div class="modal-dialog">
         <div class="modal-content">
-          <form action="/admin/add" method="post" id="userform">
+          <form action="/database/add" method="post" id="databaseform">
             <div class="modal-header">
               <!-- Form Name -->
               <legend>Add Admin</legend>
@@ -49,7 +52,17 @@
                   <div class="control-group">
                     <label class="control-label" for="password">Password</label>
                     <div class="controls">
-                      <input id="password" name="password" type="password" placeholder="Password" class="input-xlarge form-control">
+                      <input id="dbpassword" name="password" type="text" placeholder="Password" class="input-xlarge form-control">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="control-group">
+                    <label class="control-label" for="container">Container</label>
+                    <div class="controls">
+                      <input id="container" name="container" type="text" placeholder="Associated container" class="input-xlarge form-control">
                     </div>
                   </div>
                 </div>
