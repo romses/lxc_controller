@@ -72,20 +72,7 @@ def deletedatabases(name):
     cur.execute('DELETE FROM db where user=%s',(name))
     con.commit()
     rows = cur.fetchall()
-    try:
-        cur.execute("DROP DATABASE {db}".format(db=name))
-        con.commit()
-    except mdb.Error as e:
-        print(e)
-
-    try:
-        cur.execute("DROP USER %s@'%%'",(name))
-        con.commit()
-    except mdb.Error as e:
-        print(e)
-
     con.close()
-   
     return redirect('/container/edit/'+domain)
 
 
@@ -499,28 +486,19 @@ def updateDatabases():
             print(e)
 
         try:
-            cur.execute("CREATE USER %s IDENTIFIED BY %s",(row[0],row[1]))
-            con.commit()
-        except  mdb.Error as e:
-            print("Warning: User existing. Trying to update password")
-            try:
-                cur.execute("SET PASSWORD FOR %s@'%%' = PASSWORD(%s)",(row[0],row[1]))
-                con.commit()
-            except mdb.Error as e:
-                print("Cannot update Password")
-                print(e)
-
-        try:
             cur.execute("GRANT USAGE on *.* TO %s@'%%' IDENTIFIED BY %s",(row[0],row[1]))
+            con.commit()
+            cur.execute("GRANT USAGE on *. TO %s@'%%' IDENTIFIED BY %s",(row[0],row[1]))
             con.commit()
         except  mdb.Error as e:
             print("Exception ")
             print(e)
 
         try:
-            cur.execute("GRANT ALL ON {user}.* TO %s@'%%' IDENTIFIED BY %s".format(user=row[0]),(row[0],row[1]))
+            cur.execute("GRANT ALL PRIVILEGES ON %s.* TO %s@'%%'  IDENTIFIED BY %s",(row[0],row[0],row[1]))
             con.commit()
         except  mdb.Error as e:
+            print("Exception ")
             print(e)
     con.close()
 

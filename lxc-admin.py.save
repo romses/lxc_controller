@@ -1,12 +1,10 @@
 #!/usr/bin/python3
 
 # all the imports
-import sqlite3
 from flask import Flask, request, session, redirect, url_for, abort, render_template, flash
 from contextlib import closing
 import pymysql as mdb
 from lib import lxclite
-import lxc
 import json
 import timestamp
 import bcrypt
@@ -36,59 +34,10 @@ def requires_auth(f):
 def listcontainer():
     return index()
 
-@app.route('/databases/list')
+@app.route('/list/databases')
 @requires_auth
 def listdatabases():
     return "Ok"
-
-@app.route('/database/add/<name>',methods=['POST'])
-@requires_auth
-def editdatabases(name):
-    if 'user' not in request.form.keys():
-        return redirect('/container/edit/'+name)
-    if 'password' not in request.form.keys():
-        return redirect('/container/edit/'+name)
-
-    user=request.form['user']
-    password=request.form['password']
-
-    con = mdb.connect(options['DB_HOST'], options['DB_USERNAME'], options['DB_PASSWORD'], options['DB']);
-    cur = con.cursor()
-    cur.execute('INSERT INTO db (user,password,container) VALUES (%s,%s,%s) ON DUPLICATE KEY UPDATE password=VALUES(password),container=VALUES(container)',(user,password,name))
-    con.commit()
-    rows = cur.fetchall()
-    con.close()
-    updateDatabases()
-    return redirect('/container/edit/'+name)
-
-@app.route('/database/delete/<name>')
-@requires_auth
-def deletedatabases(name):
-    con = mdb.connect(options['DB_HOST'], options['DB_USERNAME'], options['DB_PASSWORD'], options['DB']);
-    cur = con.cursor()
-    cur.execute('SELECT container FROM db where user=%s',(name))
-    rows = cur.fetchall()
-    domain=rows[0][0]
-    cur.execute('DELETE FROM db where user=%s',(name))
-    con.commit()
-    rows = cur.fetchall()
-    try:
-        cur.execute("DROP DATABASE {db}".format(db=name))
-        con.commit()
-    except mdb.Error as e:
-        print(e)
-
-    try:
-        cur.execute("DROP USER %s@'%%'",(name))
-        con.commit()
-    except mdb.Error as e:
-        print(e)
-
-    con.close()
-   
-    return redirect('/container/edit/'+domain)
-
-
 
 @app.route('/')
 @requires_auth
@@ -103,34 +52,32 @@ def index():
 
         cur.execute('SELECT DISTINCT container FROM ftpuser UNION SELECT container from domains')
         rows = cur.fetchall()
+        for row in rows:
+            dbentries[row[0]]=0
+
+        for container in lxclite.ls():
+            if (container != "_template"):
+                state=lxclite.info(container)
+                c={'name':container,
+                   'state':state['state'],
+                   'mem':int(int(state['mem'])/(1024*1024)),
+                   'ip':state['ip']
+                }
+                if container not in dbentries:
+                    c['warning']='container has no user or domains configured'
+                else:
+                    dbentries.pop(container)
+                entries.append(c)
+
+        for entry in dbentries:
+            cur.execute('DELETE FROM ftpuser where container=%s',entry)
+            con.commit()
+            cur.execute('DELETE FROM domains where container=%s',entry)
+            con.commit()
+            logging.info('Cleaning orphaned container %s',entry)
 
     except:
         flash("Database Error")
-
-    for row in rows:
-        dbentries[row[0]]=0
-
-    for container in lxc.list_containers(as_object=True):
-        if (container.name != "_template"):
-            c={'name':container.name,
-               'state':container.state,
-               'mem':int(int(lxclite.info(container.name)['mem'])/(1024*1024))
-            }
-            if container.running:
-                c['ip']=container.get_ips(timeout=30)[0]
-            if container.name not in dbentries:
-                c['warning']='container has no user or domains configured'
-            else:
-                dbentries.pop(container.name)
-            entries.append(c)
-
-    for entry in dbentries:
-        cur.execute('DELETE FROM ftpuser where container=%s',entry)
-        con.commit()
-        cur.execute('DELETE FROM domains where container=%s',entry)
-        con.commit()
-        logging.info('Cleaning orphaned container %s',entry)
-
 
     return render_template('list_containers.tmpl',entries=entries)
 
@@ -170,7 +117,8 @@ def containeredit(name):
     rows = cur.fetchall()
     entries['domains']=rows
 
-    cur.execute('SELECT user,password FROM db where container= %s',(name))
+
+    cur.execute('SELECT * FROM db where container= %s',(name))
     rows = cur.fetchall()
     con.close()
     entries['databases']=rows
@@ -255,9 +203,9 @@ def admindel(name):
 @app.route('/container/start/<name>')
 @requires_auth
 def containerstart(name):
-    container=lxc.Container(name)
-    if container.defined:
-        container.start()
+    if name in lxclite.ls():
+        logging.info("Starting %s",name)
+        lxclite.start(name)
         return 'Ok'
     else:
         logging.info("%s not existing",name)
@@ -266,11 +214,10 @@ def containerstart(name):
 @app.route('/container/stop/<name>')
 @requires_auth
 def containerstop(name):
-    container=lxc.Container(name)
-    if container.defined:
+    if name in lxclite.ls():
         logging.info("Stopping %s",name)
-        container.stop()
-        return "Ok"
+        lxclite.stop(name)
+        return 'Ok'
     else:
         logging.info("%s not existing",name)
         return 'Error'
@@ -340,8 +287,7 @@ def adddomain(name):
     if 'domain' in request.form.keys():
         crt=request.form['certificate']
         if (crt == ""):
-            if os.path.isfile(tmpfile):
-                os.remove(tmpfile)
+            os.remove(tmpfile)
             tmpfile=""
         else:
             if not os.path.isfile(crt):
@@ -478,51 +424,6 @@ def updateHAProxy():
 
     command = ['service', 'haproxy','restart'];
     subprocess.check_call(command, shell=False)
-
-    return 0
-
-def updateDatabases():
-    logging.info("Setting up databases and users")
-
-    con = mdb.connect(options['DB_HOST'], options['DB_USERNAME'], options['DB_PASSWORD'], options['DB']);
-    cur = con.cursor()
-    cur.execute("SELECT user,password,container FROM db")
-    rows = cur.fetchall()
-
-    for row in rows:    
-        try:
-            cur.execute("CREATE DATABASE IF NOT EXISTS {db}".format(db=row[0]))
-            con.commit()
-        except  mdb.Error as e:
-            print("Creating "+row[0]+" failed")
-            print("Exception ")
-            print(e)
-
-        try:
-            cur.execute("CREATE USER %s IDENTIFIED BY %s",(row[0],row[1]))
-            con.commit()
-        except  mdb.Error as e:
-            print("Warning: User existing. Trying to update password")
-            try:
-                cur.execute("SET PASSWORD FOR %s@'%%' = PASSWORD(%s)",(row[0],row[1]))
-                con.commit()
-            except mdb.Error as e:
-                print("Cannot update Password")
-                print(e)
-
-        try:
-            cur.execute("GRANT USAGE on *.* TO %s@'%%' IDENTIFIED BY %s",(row[0],row[1]))
-            con.commit()
-        except  mdb.Error as e:
-            print("Exception ")
-            print(e)
-
-        try:
-            cur.execute("GRANT ALL ON {user}.* TO %s@'%%' IDENTIFIED BY %s".format(user=row[0]),(row[0],row[1]))
-            con.commit()
-        except  mdb.Error as e:
-            print(e)
-    con.close()
 
     return 0
 

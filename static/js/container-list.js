@@ -1,10 +1,5 @@
 var obj = null;
 
-//Liest json datei
-$.getJSON('/lxc/images', function(data){
-    obj = data;
-}, setSystems);
-
 $('#system').change(function() {
     setVersions();
 });
@@ -63,4 +58,9 @@ function clearContainer() {
     $('#system').css("display", "none");
     $('#version').css("display", "none");
     $('#architecture').css("display", "none");
+    //Liest json datei
+    $.getJSON('/lxc/images', function(data){
+        obj = data;
+    }, setSystems);
+
 }

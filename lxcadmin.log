@@ -1,0 +1,2927 @@
+
+ERROR:__main__:Exception on /container/edit/webmail_macrocom_de [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 152, in containeredit
+    return render_template('edit_container.tmpl',entries=entries)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 134, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 282, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 768, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 929, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 1125, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 893, in _read_packet
+    packet.check_error()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 369, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 115, in _check_mysql_exception
+    raise InternalError(errno, errorvalue)
+pymysql.err.InternalError: (1054, "Unknown column 'database' in 'field list'")
+ERROR:__main__:Exception on /container/edit/webmail_macrocom_de [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 152, in containeredit
+    return render_template('edit_container.tmpl',entries=entries)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 134, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 282, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 768, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 929, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 1125, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 893, in _read_packet
+    packet.check_error()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 369, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 115, in _check_mysql_exception
+    raise InternalError(errno, errorvalue)
+pymysql.err.InternalError: (1054, "Unknown column 'database' in 'field list'")
+ERROR:__main__:Exception on /container/edit/webmail_macrocom_de [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 152, in containeredit
+    return render_template('edit_container.tmpl',entries=entries)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 134, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 282, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 768, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 929, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 1125, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 893, in _read_packet
+    packet.check_error()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 369, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 115, in _check_mysql_exception
+    raise InternalError(errno, errorvalue)
+pymysql.err.InternalError: (1054, "Unknown column 'database' in 'field list'")
+ERROR:__main__:Exception on /container/edit/webmail_macrocom_de [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 152, in containeredit
+    return render_template('edit_container.tmpl',entries=entries)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 134, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 282, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 768, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 929, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 1125, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 893, in _read_packet
+    packet.check_error()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 369, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 115, in _check_mysql_exception
+    raise InternalError(errno, errorvalue)
+pymysql.err.InternalError: (1054, "Unknown column 'database' in 'field list'")
+ERROR:__main__:Exception on /container/edit/webmail_macrocom_de [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 152, in containeredit
+    return render_template('edit_container.tmpl',entries=entries)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 134, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 282, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 768, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 929, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 1125, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 893, in _read_packet
+    packet.check_error()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 369, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 115, in _check_mysql_exception
+    raise InternalError(errno, errorvalue)
+pymysql.err.InternalError: (1054, "Unknown column 'database' in 'field list'")
+ERROR:__main__:Exception on /container/edit/webmail_macrocom_de [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 152, in containeredit
+    return render_template('edit_container.tmpl',entries=entries)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 134, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 282, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 768, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 929, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 1125, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 893, in _read_packet
+    packet.check_error()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 369, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 115, in _check_mysql_exception
+    raise InternalError(errno, errorvalue)
+pymysql.err.InternalError: (1054, "Unknown column 'database' in 'field list'")
+ERROR:__main__:Exception on /container/edit/webmail_macrocom_de [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 152, in containeredit
+    return render_template('edit_container.tmpl',entries=entries)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 134, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 282, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 768, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 929, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 1125, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 893, in _read_packet
+    packet.check_error()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 369, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 115, in _check_mysql_exception
+    raise InternalError(errno, errorvalue)
+pymysql.err.InternalError: (1054, "Unknown column 'database' in 'field list'")
+ERROR:__main__:Exception on /container/edit/webmail_macrocom_de [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 152, in containeredit
+    @app.route('/container/add', methods=['POST'])
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 134, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 282, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 768, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 929, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 1125, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 893, in _read_packet
+    packet.check_error()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 369, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 115, in _check_mysql_exception
+    raise InternalError(errno, errorvalue)
+pymysql.err.InternalError: (1054, "Unknown column 'database' in 'field list'")
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+ERROR:__main__:Exception on /container/edit/uuu1 [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 143, in containeredit
+    entries = dict(name=name,state=lxclite.info(name))
+  File "/root/lxc-admin/lib/lxclite/__init__.py", line 81, in info
+    if not exists(container): raise ContainerDoesntExists('Container {} does not exist!'.format(container))
+lib.lxclite.ContainerDoesntExists: Container uuu1 does not exist!
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 480, in updateDatabases
+    cur.execute("GRANT USAGE on *.* TO %s@'%' IDENTIFIED BY %s",(row[0],row[1]))
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 132, in execute
+    query = query % self._escape_args(args, conn)
+ValueError: unsupported format character ''' (0x27) at index 27
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 480, in updateDatabases
+    cur.execute("GRANT USAGE on *.* TO %s@% IDENTIFIED BY %s",(row[0],row[1]))
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 132, in execute
+    query = query % self._escape_args(args, conn)
+ValueError: unsupported format character ''' (0x27) at index 27
+WARNING:root:LXC-Controller started
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 480, in updateDatabases
+    cur.execute("GRANT USAGE on *.* TO %s@%% IDENTIFIED BY %s",(row[0],row[1]))
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 134, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 282, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 768, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 929, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 1125, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 893, in _read_packet
+    packet.check_error()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 369, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 115, in _check_mysql_exception
+    raise InternalError(errno, errorvalue)
+pymysql.err.InternalError: (1470, "String 'webmail_macrocom_de' is too long for user name (should be no longer than 16)")
+WARNING:root:LXC-Controller started
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 480, in updateDatabases
+    cur.execute("GRANT USAGE on *.* TO %s@%% IDENTIFIED BY %s",(row[0],row[1]))
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 134, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 282, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 768, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 929, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 1125, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 893, in _read_packet
+    packet.check_error()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 369, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 112, in _check_mysql_exception
+    raise errorclass(errno, errorvalue)
+pymysql.err.ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '% IDENTIFIED BY 'seppGUUz'' at line 1")
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 480, in updateDatabases
+    cur.execute("GRANT USAGE on *.* TO %s@%% IDENTIFIED BY %s",(row[0],row[1]))
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 134, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 282, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 768, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 929, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 1125, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 893, in _read_packet
+    packet.check_error()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 369, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 112, in _check_mysql_exception
+    raise errorclass(errno, errorvalue)
+pymysql.err.ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '% IDENTIFIED BY 'gA0OBLJH'' at line 1")
+WARNING:root:LXC-Controller started
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 480, in updateDatabases
+    cur.execute("GRANT USAGE on *.* TO %s@%% IDENTIFIED BY %s",(row[0],row[1]))
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 134, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 282, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 768, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 929, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 1125, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 893, in _read_packet
+    packet.check_error()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 369, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 112, in _check_mysql_exception
+    raise errorclass(errno, errorvalue)
+pymysql.err.ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '% IDENTIFIED BY 'GvaPMnvM'' at line 1")
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 480, in updateDatabases
+    cur.execute("GRANT USAGE on *.* TO %s@%% IDENTIFIED BY %s",(row[0],row[1]))
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 134, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 282, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 768, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 929, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 1125, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 893, in _read_packet
+    packet.check_error()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 369, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 112, in _check_mysql_exception
+    raise errorclass(errno, errorvalue)
+pymysql.err.ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '% IDENTIFIED BY 'HReVb0ZN'' at line 1")
+WARNING:root:LXC-Controller started
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 480, in updateDatabases
+    cur.execute("GRANT USAGE on *.* TO %s@% IDENTIFIED BY %s",(row[0],row[1]))
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 132, in execute
+    query = query % self._escape_args(args, conn)
+ValueError: unsupported format character 'I' (0x49) at index 27
+WARNING:root:LXC-Controller started
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 480, in updateDatabases
+    cur.execute("GRANT USAGE on *.* TO %s@%s IDENTIFIED BY %s",(row[0],row[1],"%"))
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 134, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 282, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 768, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 929, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 1125, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 893, in _read_packet
+    packet.check_error()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 369, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 112, in _check_mysql_exception
+    raise errorclass(errno, errorvalue)
+pymysql.err.OperationalError: (1045, "Access denied for user 'lxc'@'localhost' (using password: YES)")
+WARNING:root:LXC-Controller started
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 482, in updateDatabases
+    cur.execute("CREATE DATABASE IF NOT EXISTS %s",row[0])
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 134, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 282, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 768, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 929, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 1125, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 893, in _read_packet
+    packet.check_error()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 369, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 112, in _check_mysql_exception
+    raise errorclass(errno, errorvalue)
+pymysql.err.ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''webmail_1'' at line 1")
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 480, in updateDatabases
+    cur.execute("GRANT USAGE on *.* TO %s@%s IDENTIFIED BY %s",(row[0],row[1],"%"))
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 134, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 282, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 768, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 929, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 1125, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 893, in _read_packet
+    packet.check_error()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 369, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 112, in _check_mysql_exception
+    raise errorclass(errno, errorvalue)
+pymysql.err.OperationalError: (1044, "Access denied for user 'lxc'@'localhost' to database 'mysql'")
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 480, in updateDatabases
+    cur.execute("GRANT USAGE on *.* TO %s@%s IDENTIFIED BY %s",(row[0],row[1],"%"))
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 134, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 282, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 768, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 929, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 1125, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 893, in _read_packet
+    packet.check_error()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 369, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 112, in _check_mysql_exception
+    raise errorclass(errno, errorvalue)
+pymysql.err.OperationalError: (1044, "Access denied for user 'lxc'@'localhost' to database 'mysql'")
+WARNING:root:LXC-Controller started
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 482, in updateDatabases
+    cur.execute("CREATE DATABASE IF NOT EXISTS %s",row[0])
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 134, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 282, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 768, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 929, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 1125, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 893, in _read_packet
+    packet.check_error()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 369, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 112, in _check_mysql_exception
+    raise errorclass(errno, errorvalue)
+pymysql.err.ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''webmail_1'' at line 1")
+WARNING:root:LXC-Controller started
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 480, in updateDatabases
+    cur.execute("GRANT USAGE on *.* TO %s@%s IDENTIFIED BY %s",(row[0],"%",row[1]))
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 134, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 282, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 768, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 929, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 1125, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 893, in _read_packet
+    packet.check_error()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 369, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 112, in _check_mysql_exception
+    raise errorclass(errno, errorvalue)
+pymysql.err.OperationalError: (1044, "Access denied for user 'lxc'@'localhost' to database 'mysql'")
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 480, in updateDatabases
+    cur.execute("GRANT USAGE on *.* TO %s@%s IDENTIFIED BY %s",(row[0],"%",row[1]))
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 134, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 282, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 768, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 929, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 1125, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 893, in _read_packet
+    packet.check_error()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 369, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 112, in _check_mysql_exception
+    raise errorclass(errno, errorvalue)
+pymysql.err.OperationalError: (1044, "Access denied for user 'lxc'@'localhost' to database 'mysql'")
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 480, in updateDatabases
+    cur.execute("GRANT USAGE on *.* TO %s@%s IDENTIFIED BY %s",(row[0],"%",row[1]))
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 134, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 282, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 768, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 929, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 1125, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 893, in _read_packet
+    packet.check_error()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 369, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 112, in _check_mysql_exception
+    raise errorclass(errno, errorvalue)
+pymysql.err.OperationalError: (1044, "Access denied for user 'lxc'@'localhost' to database 'mysql'")
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 480, in updateDatabases
+    cur.execute("GRANT USAGE on *.* TO %s@%s IDENTIFIED BY %s",(row[0],"%",row[1]))
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 134, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 282, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 768, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 929, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 1125, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 893, in _read_packet
+    packet.check_error()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 369, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 112, in _check_mysql_exception
+    raise errorclass(errno, errorvalue)
+pymysql.err.OperationalError: (1044, "Access denied for user 'lxc'@'localhost' to database 'mysql'")
+WARNING:root:LXC-Controller started
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 480, in updateDatabases
+    cur.execute("GRANT USAGE on *.* TO %s@%s IDENTIFIED BY %s",(row[0],"%",row[1]))
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 134, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 282, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 768, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 929, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 1125, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 893, in _read_packet
+    packet.check_error()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 369, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 112, in _check_mysql_exception
+    raise errorclass(errno, errorvalue)
+pymysql.err.OperationalError: (1044, "Access denied for user 'lxc'@'localhost' to database 'mysql'")
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 480, in updateDatabases
+    cur.execute("GRANT USAGE on *.* TO %s@%s IDENTIFIED BY %s",(row[0],"%",row[1]))
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 134, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 282, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 768, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 929, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 1125, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 893, in _read_packet
+    packet.check_error()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 369, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 112, in _check_mysql_exception
+    raise errorclass(errno, errorvalue)
+pymysql.err.OperationalError: (1044, "Access denied for user 'lxc'@'localhost' to database 'mysql'")
+WARNING:root:LXC-Controller started
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 480, in updateDatabases
+    cur.execute("GRANT USAGE on *.* TO %s@%s IDENTIFIED BY %s",(row[0],"%",row[1]))
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 134, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 282, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 768, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 929, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 1125, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 893, in _read_packet
+    packet.check_error()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 369, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 112, in _check_mysql_exception
+    raise errorclass(errno, errorvalue)
+pymysql.err.OperationalError: (1044, "Access denied for user 'lxc'@'localhost' to database 'mysql'")
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 480, in updateDatabases
+    cur.execute("GRANT USAGE on *.* TO %s@%s IDENTIFIED BY %s",(row[0],"%",row[1]))
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 134, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 282, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 768, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 929, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 1125, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 893, in _read_packet
+    packet.check_error()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 369, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 112, in _check_mysql_exception
+    raise errorclass(errno, errorvalue)
+pymysql.err.OperationalError: (1044, "Access denied for user 'lxc'@'localhost' to database 'mysql'")
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 480, in updateDatabases
+    cur.execute("GRANT USAGE on *.* TO %s@%s IDENTIFIED BY %s",(row[0],"%",row[1]))
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 134, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 282, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 768, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 929, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 1125, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 893, in _read_packet
+    packet.check_error()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 369, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 112, in _check_mysql_exception
+    raise errorclass(errno, errorvalue)
+pymysql.err.OperationalError: (1044, "Access denied for user 'lxc'@'localhost' to database 'mysql'")
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 480, in updateDatabases
+    cur.execute("GRANT USAGE on *.* TO %s@%s IDENTIFIED BY %s",(row[0],"%",row[1]))
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 134, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 282, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 768, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 929, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 1125, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 893, in _read_packet
+    packet.check_error()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 369, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 112, in _check_mysql_exception
+    raise errorclass(errno, errorvalue)
+pymysql.err.OperationalError: (1044, "Access denied for user 'lxc'@'localhost' to database 'mysql'")
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 480, in updateDatabases
+    cur.execute("GRANT USAGE on *.* TO %s@%s IDENTIFIED BY %s",(row[0],"%",row[1]))
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 134, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 282, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 768, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 929, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 1125, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 893, in _read_packet
+    packet.check_error()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 369, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 112, in _check_mysql_exception
+    raise errorclass(errno, errorvalue)
+pymysql.err.OperationalError: (1044, "Access denied for user 'lxc'@'localhost' to database 'mysql'")
+WARNING:root:LXC-Controller started
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 482, in updateDatabases
+    cur.execute("CREATE DATABASE IF NOT EXISTS %s",row[0])
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 134, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 282, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 768, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 929, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 1125, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 893, in _read_packet
+    packet.check_error()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 369, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 112, in _check_mysql_exception
+    raise errorclass(errno, errorvalue)
+pymysql.err.ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''webmail_1'' at line 1")
+WARNING:root:LXC-Controller started
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 480, in updateDatabases
+    cur.execute("GRANT USAGE on *.* TO %s@%s IDENTIFIED BY %s",(row[0],"%",row[1]))
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 134, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 282, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 768, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 929, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 1125, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 893, in _read_packet
+    packet.check_error()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 369, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 112, in _check_mysql_exception
+    raise errorclass(errno, errorvalue)
+pymysql.err.OperationalError: (1044, "Access denied for user 'lxc'@'localhost' to database 'mysql'")
+WARNING:root:LXC-Controller started
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 480, in updateDatabases
+    cur.execute("GRANT USAGE on *.* TO %s@%s IDENTIFIED BY %s",(row[0],"%",row[1]))
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 134, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 282, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 768, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 929, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 1125, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 893, in _read_packet
+    packet.check_error()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 369, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 112, in _check_mysql_exception
+    raise errorclass(errno, errorvalue)
+pymysql.err.OperationalError: (1044, "Access denied for user 'lxc'@'localhost' to database 'mysql'")
+WARNING:root:LXC-Controller started
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 480, in updateDatabases
+    cur.execute("GRANT USAGE on *.* TO %s@%s IDENTIFIED BY %s",(row[0],"%",row[1]))
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 134, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 282, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 768, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 929, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 1125, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 893, in _read_packet
+    packet.check_error()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 369, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 112, in _check_mysql_exception
+    raise errorclass(errno, errorvalue)
+pymysql.err.OperationalError: (1044, "Access denied for user 'lxc'@'localhost' to database 'mysql'")
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 480, in updateDatabases
+    cur.execute("GRANT USAGE on *.* TO %s@%s IDENTIFIED BY %s",(row[0],"%",row[1]))
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 134, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 282, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 768, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 929, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 1125, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 893, in _read_packet
+    packet.check_error()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 369, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 112, in _check_mysql_exception
+    raise errorclass(errno, errorvalue)
+pymysql.err.OperationalError: (1044, "Access denied for user 'lxc'@'localhost' to database 'mysql'")
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 480, in updateDatabases
+    cur.execute("GRANT USAGE on *.* TO %s@%s IDENTIFIED BY %s",(row[0],"%",row[1]))
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 134, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 282, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 768, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 929, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 1125, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 893, in _read_packet
+    packet.check_error()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 369, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 112, in _check_mysql_exception
+    raise errorclass(errno, errorvalue)
+pymysql.err.OperationalError: (1044, "Access denied for user 'lxc'@'localhost' to database 'mysql'")
+WARNING:root:LXC-Controller started
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 480, in updateDatabases
+    cur.execute("GRANT USAGE on *.* TO %s@%s IDENTIFIED BY %s",(row[0],"%",row[1]))
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 134, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 282, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 768, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 929, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 1125, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 893, in _read_packet
+    packet.check_error()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 369, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 112, in _check_mysql_exception
+    raise errorclass(errno, errorvalue)
+pymysql.err.OperationalError: (1044, "Access denied for user 'lxc'@'localhost' to database 'mysql'")
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 481, in updateDatabases
+    cur.execute("GRANT USAGE on *.* TO %s@%s IDENTIFIED BY %s",(row[0],"%",row[1]))
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 134, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 282, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 768, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 929, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 1125, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 893, in _read_packet
+    packet.check_error()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 369, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 112, in _check_mysql_exception
+    raise errorclass(errno, errorvalue)
+pymysql.err.OperationalError: (1044, "Access denied for user 'lxc'@'localhost' to database 'mysql'")
+WARNING:root:LXC-Controller started
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 481, in updateDatabases
+    cur.execute("CREATE USER %s@%s IDENTIFIED BY %s",(row[0],"%",row[1]))
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 134, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 282, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 768, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 929, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 1125, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 893, in _read_packet
+    packet.check_error()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 369, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 115, in _check_mysql_exception
+    raise InternalError(errno, errorvalue)
+pymysql.err.InternalError: (1396, "Operation CREATE USER failed for 'webmail_1'@'%'")
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 481, in updateDatabases
+    cur.execute("CREATE USER %s@%s IDENTIFIED BY %s",(row[0],"%",row[1]))
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 134, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 282, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 768, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 929, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 1125, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 893, in _read_packet
+    packet.check_error()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 369, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 115, in _check_mysql_exception
+    raise InternalError(errno, errorvalue)
+pymysql.err.InternalError: (1396, "Operation CREATE USER failed for 'webmail_1'@'%'")
+WARNING:root:LXC-Controller started
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 481, in updateDatabases
+    cur.execute("CREATE USER %s@% IDENTIFIED BY %s",(row[0],row[1]))
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 132, in execute
+    query = query % self._escape_args(args, conn)
+ValueError: unsupported format character 'I' (0x49) at index 17
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 481, in updateDatabases
+    cur.execute("CREATE DATABASE IF NOT EXISTS %s",row[0])
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 132, in execute
+    query = query % self._escape_args(args, conn)
+ValueError: unsupported format character 'I' (0x49) at index 17
+WARNING:root:LXC-Controller started
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 481, in updateDatabases
+    cur.execute("CREATE DATABASE IF NOT EXISTS %s",row[0])
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 134, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 282, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 768, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 929, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 1125, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 893, in _read_packet
+    packet.check_error()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 369, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 112, in _check_mysql_exception
+    raise errorclass(errno, errorvalue)
+pymysql.err.ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''webmail_1'' at line 1")
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 481, in updateDatabases
+    cur.execute("CREATE DATABASE IF NOT EXISTS %s",row[0])
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 134, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 282, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 768, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 929, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 1125, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 893, in _read_packet
+    packet.check_error()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 369, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 112, in _check_mysql_exception
+    raise errorclass(errno, errorvalue)
+pymysql.err.ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''webmail_1'' at line 1")
+WARNING:root:LXC-Controller started
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 481, in updateDatabases
+    cur.execute("CREATE DATABASE IF NOT EXISTS %s",row[0])
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 134, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 282, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 768, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 929, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 1125, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 893, in _read_packet
+    packet.check_error()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 369, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 112, in _check_mysql_exception
+    raise errorclass(errno, errorvalue)
+pymysql.err.ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''webmail_1'' at line 1")
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 481, in updateDatabases
+    cur.execute("CREATE DATABASE IF NOT EXISTS %s",(row[0]))
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 134, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 282, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 768, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 929, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 1125, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 893, in _read_packet
+    packet.check_error()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 369, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 112, in _check_mysql_exception
+    raise errorclass(errno, errorvalue)
+pymysql.err.ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''webmail_1'' at line 1")
+WARNING:root:LXC-Controller started
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 481, in updateDatabases
+    cur.execute("CREATE DATABASE IF NOT EXISTS %s",(row[0]))
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 134, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 282, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 768, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 929, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 1125, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 893, in _read_packet
+    packet.check_error()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 369, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 112, in _check_mysql_exception
+    raise errorclass(errno, errorvalue)
+pymysql.err.ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''webmail_1'' at line 1")
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 481, in updateDatabases
+    cur.execute("CREATE DATABASE IF NOT EXISTS %s",(row[0]))
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 134, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 282, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 768, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 929, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 1125, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 893, in _read_packet
+    packet.check_error()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 369, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 112, in _check_mysql_exception
+    raise errorclass(errno, errorvalue)
+pymysql.err.ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''webmail_1'' at line 1")
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 481, in updateDatabases
+    cur.execute("CREATE DATABASE IF NOT EXISTS %s",(row[0]))
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 134, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 282, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 768, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 929, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 1125, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 893, in _read_packet
+    packet.check_error()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 369, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 112, in _check_mysql_exception
+    raise errorclass(errno, errorvalue)
+pymysql.err.ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''webmail_1'' at line 1")
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 481, in updateDatabases
+    cur.execute("CREATE DATABASE IF NOT EXISTS %s",(row[0]))
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 134, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 282, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 768, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 929, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 1125, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 893, in _read_packet
+    packet.check_error()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 369, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 112, in _check_mysql_exception
+    raise errorclass(errno, errorvalue)
+pymysql.err.ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''webmail_1'' at line 1")
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 481, in updateDatabases
+    cur.execute("CREATE DATABASE IF NOT EXISTS %s;",(row[0]))
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 134, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 282, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 768, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 929, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 1125, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 893, in _read_packet
+    packet.check_error()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 369, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 112, in _check_mysql_exception
+    raise errorclass(errno, errorvalue)
+pymysql.err.ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''webmail_1'' at line 1")
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 481, in updateDatabases
+    cur.execute("CREATE DATABASE IF NOT EXISTS '%s';",(row[0]))
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 134, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 282, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 768, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 929, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 1125, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 893, in _read_packet
+    packet.check_error()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 369, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 112, in _check_mysql_exception
+    raise errorclass(errno, errorvalue)
+pymysql.err.ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''webmail_1'' at line 1")
+WARNING:root:LXC-Controller started
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 481, in updateDatabases
+    cur.execute("CREATE DATABASE IF NOT EXISTS %s;",(row[0]))
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 134, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 282, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 768, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 929, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 1125, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 893, in _read_packet
+    packet.check_error()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 369, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 112, in _check_mysql_exception
+    raise errorclass(errno, errorvalue)
+pymysql.err.ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''webmail_1'' at line 1")
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 481, in updateDatabases
+    cur.execute("CREATE DATABASE IF NOT EXISTS test;")
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 134, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 282, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 768, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 929, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 1125, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 893, in _read_packet
+    packet.check_error()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 369, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 112, in _check_mysql_exception
+    raise errorclass(errno, errorvalue)
+pymysql.err.ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''webmail_1'' at line 1")
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 481, in updateDatabases
+    cur.execute("CREATE DATABASE IF NOT EXISTS test;",row[0])
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 132, in execute
+    query = query % self._escape_args(args, conn)
+TypeError: not all arguments converted during string formatting
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 481, in updateDatabases
+    cur.execute("CREATE DATABASE IF NOT EXISTS test;",row[0])
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 132, in execute
+    query = query % self._escape_args(args, conn)
+TypeError: not all arguments converted during string formatting
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 823, in _connect
+    (self.host, self.port), self.connect_timeout)
+  File "/usr/lib/python3.4/socket.py", line 509, in create_connection
+    raise err
+  File "/usr/lib/python3.4/socket.py", line 500, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 55, in editdatabases
+    con = mdb.connect(options['DB_HOST'], options['DB_USERNAME'], options['DB_PASSWORD'], options['DB']);
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/__init__.py", line 88, in Connect
+    return Connection(*args, **kwargs)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 644, in __init__
+    self._connect()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 869, in _connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on 'localhost' ([Errno 111] Connection refused)")
+WARNING:root:LXC-Controller started
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 481, in updateDatabases
+    cur.execute("CREATE DATABASE IF NOT EXISTS "+row[0])
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 132, in execute
+    query = query % self._escape_args(args, conn)
+TypeError: not all arguments converted during string formatting
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 481, in updateDatabases
+    SQL="CREATE DATABASE IF NOT EXISTS "+row[0]
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 132, in execute
+    query = query % self._escape_args(args, conn)
+TypeError: not all arguments converted during string formatting
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 481, in updateDatabases
+    SQL="CREATE DATABASE IF NOT EXISTS "+row[0]
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 132, in execute
+    query = query % self._escape_args(args, conn)
+TypeError: not all arguments converted during string formatting
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 484, in updateDatabases
+    cur.execute(SQL)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 134, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 282, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 768, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 929, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 1125, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 893, in _read_packet
+    packet.check_error()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 369, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 112, in _check_mysql_exception
+    raise errorclass(errno, errorvalue)
+pymysql.err.ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '% IDENTIFIED BY xBzVnkV3' at line 1")
+WARNING:root:LXC-Controller started
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "./lxc-admin.py", line 481, in updateDatabases
+    cur.execute("CREATE DATABASE IF NOT EXISTS %s",(row[0]))
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 134, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 282, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 768, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 929, in _read_query_result
+    result.read()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 1125, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 893, in _read_packet
+    packet.check_error()
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 369, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 120, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/err.py", line 112, in _check_mysql_exception
+    raise errorclass(errno, errorvalue)
+pymysql.err.ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''test_1'' at line 1")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 484, in updateDatabases
+    print(repr(e))
+NameError: name 'e' is not defined
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 487, in updateDatabases
+    cur.execute("GRANT USAGE on *.* TO %s@% IDENTIFIED BY %s"(row[0],row[1]))
+TypeError: 'str' object is not callable
+WARNING:root:LXC-Controller started
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 488, in updateDatabases
+    cur.execute("GRANT USAGE on *.* TO %s@% IDENTIFIED BY %s"(row[0],row[1]))
+TypeError: 'str' object is not callable
+WARNING:root:LXC-Controller started
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 488, in updateDatabases
+    cur.execute("GRANT USAGE on *.* TO %s@% IDENTIFIED BY %s"(row[0],row[1]))
+TypeError: 'str' object is not callable
+WARNING:root:LXC-Controller started
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 488, in updateDatabases
+    cur.execute("GRANT USAGE on *.* TO %s@% IDENTIFIED BY %s"(row[0],row[1]))
+TypeError: 'str' object is not callable
+WARNING:root:LXC-Controller started
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 488, in updateDatabases
+    cur.execute("GRANT USAGE on *.* TO %s@% IDENTIFIED BY %s"(row[0],row[1]))
+TypeError: 'str' object is not callable
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 488, in updateDatabases
+    cur.execute("GRANT USAGE on *.* TO %s@% IDENTIFIED BY %s"(row[0],row[1]))
+TypeError: 'str' object is not callable
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 488, in updateDatabases
+    cur.execute("GRANT USAGE on *.* TO %s@% IDENTIFIED BY %s"(row[0],row[1]))
+TypeError: 'str' object is not callable
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 488, in updateDatabases
+    cur.execute("GRANT USAGE on *.* TO {user}@% IDENTIFIED BY {pass}".format(row[0],row[1]))
+TypeError: 'str' object is not callable
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 488, in updateDatabases
+    cur.execute("GRANT USAGE on *.* TO {user}@% IDENTIFIED BY {pass}".format(row[0],row[1]))
+TypeError: 'str' object is not callable
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 488, in updateDatabases
+    cur.execute("GRANT USAGE on *.* TO {user}@% IDENTIFIED BY {pass}".format(row[0],row[1]))
+TypeError: 'str' object is not callable
+WARNING:root:LXC-Controller started
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 488, in updateDatabases
+    cur.execute("GRANT USAGE on *.* TO {user}@% IDENTIFIED BY {pass}".format(row[0],row[1]))
+KeyError: 'user'
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 488, in updateDatabases
+    cur.execute("GRANT USAGE on *.* TO {user}@% IDENTIFIED BY {pass}".format(row[0],row[1]))
+KeyError: 'user'
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 488, in updateDatabases
+    cur.execute("GRANT USAGE on *.* TO {user}@% IDENTIFIED BY {pass}".format(row[0],row[1]))
+KeyError: 'user'
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 489, in updateDatabases
+    cur.execute("GRANT USAGE on *.* TO '%s'@'%' IDENTIFIED BY '%s'",(row[0],row[1]))
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 132, in execute
+    query = query % self._escape_args(args, conn)
+ValueError: unsupported format character ''' (0x27) at index 29
+WARNING:root:LXC-Controller started
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 489, in updateDatabases
+    cur.execute("GRANT USAGE on *.* TO %s@'%' IDENTIFIED BY %s",(row[0],row[1]))
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 132, in execute
+    query = query % self._escape_args(args, conn)
+ValueError: unsupported format character ''' (0x27) at index 27
+WARNING:root:LXC-Controller started
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 489, in updateDatabases
+    cur.execute("GRANT USAGE on *.* TO %s@% IDENTIFIED BY %s",(row[0],row[1]))
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 132, in execute
+    query = query % self._escape_args(args, conn)
+ValueError: unsupported format character 'I' (0x49) at index 27
+WARNING:root:LXC-Controller started
+ERROR:__main__:Exception on /database/add/webmail_macrocom_de [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 61, in editdatabases
+    updateDatabases()
+  File "./lxc-admin.py", line 489, in updateDatabases
+    cur.execute("GRANT USAGE on *.* TO %s@\% IDENTIFIED BY %s",(row[0],row[1]))
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 132, in execute
+    query = query % self._escape_args(args, conn)
+ValueError: unsupported format character 'I' (0x49) at index 28
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+ERROR:__main__:Exception on /database/delete/test [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 76, in deletedatabases
+    cur.execute('DROP DATABASE %s',(name))
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 134, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 282, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 767, in query
+    self._execute_command(COMMAND.COM_QUERY, sql)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 943, in _execute_command
+    raise err.InterfaceError("(0, '')")
+pymysql.err.InterfaceError: (0, '')
+ERROR:__main__:Exception on /database/delete/test [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 71, in deletedatabases
+    domain=rows[0][0]
+IndexError: tuple index out of range
+ERROR:__main__:Exception on /database/delete/test [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 76, in deletedatabases
+    cur.execute('DROP DATABASE `%s`',(name))
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 134, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 282, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 767, in query
+    self._execute_command(COMMAND.COM_QUERY, sql)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 943, in _execute_command
+    raise err.InterfaceError("(0, '')")
+pymysql.err.InterfaceError: (0, '')
+ERROR:__main__:Exception on /database/delete/test [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 76, in deletedatabases
+    try:
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 134, in execute
+    result = self._query(query)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/cursors.py", line 282, in _query
+    conn.query(q)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 767, in query
+    self._execute_command(COMMAND.COM_QUERY, sql)
+  File "/usr/local/lib/python3.4/dist-packages/pymysql/connections.py", line 943, in _execute_command
+    raise err.InterfaceError("(0, '')")
+pymysql.err.InterfaceError: (0, '')
+WARNING:root:LXC-Controller started
+ERROR:__main__:Exception on /database/delete/test [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./lxc-admin.py", line 31, in decorated
+    return f(*args, **kwargs)
+  File "./lxc-admin.py", line 71, in deletedatabases
+    domain=rows[0][0]
+IndexError: tuple index out of range
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
+WARNING:root:LXC-Controller started
