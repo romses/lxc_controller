@@ -17,7 +17,7 @@ function clearuser(){
 	$("#userform #password").val("")
 }
 
-function editdomain(domain,www,ssl){
+function editdomain(domain,www,ssl,container){
 	$("#domainform #domain").val(domain)
 	$("#domainform #certificate").val(ssl)
         if(www==1){
@@ -25,12 +25,14 @@ function editdomain(domain,www,ssl){
 	}else{
 		$("#romainform #www").bootstrapSwitch('state', 0);
 	}
+        $("#domainform #container").val(container)
 }
 
-function cleardomain(){
+function cleardomain(container){
 	$("#domainform #domain").val("")
 	$("#domainform #certificate").val("")
-	$("#romainform #www").bootstrapSwitch('state', 0);
+	$("#domainform #www").bootstrapSwitch('state', 0);
+	$("#domainform #container").val(container)
 }
 
 function cleardatabase(container){

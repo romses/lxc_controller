@@ -5,7 +5,7 @@
       <tr>
         <th>User/Database</th><th>Password</th><th>Container</th><th>Actions</th>
       </tr>
-    {% for entry in entries %}
+    {% for entry in entries.databases %}
       <td>{{ entry.name }}</td>
       <td>{{ entry.password }}</td>
       <td>
@@ -52,7 +52,12 @@
                   <div class="control-group">
                     <label class="control-label" for="password">Password</label>
                     <div class="controls">
-                      <input id="dbpassword" name="password" type="text" placeholder="Password" class="input-xlarge form-control">
+                      <div class="input-group">
+                        <input id="dbpassword" name="password" type="text" placeholder="Password" class="input-xlarge form-control">
+                        <span class="input-group-btn">
+                          <button type="button" class="btn btn-default" id="dbuserrandom">Random</button>
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -62,14 +67,18 @@
                   <div class="control-group">
                     <label class="control-label" for="container">Container</label>
                     <div class="controls">
-                      <input id="container" name="container" type="text" placeholder="Associated container" class="input-xlarge form-control">
+                      <select id="container" name="container" size="1" class="input-xlarge form-control" placeholder="Associated container">
+{% for entry in entries.container %}
+                        <option value="{{ entry }}">{{ entry }}</option>
+{% endfor %}
+                      </select>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
             <div class="modal-footer">
-              <!-- Button (Double) -->
+            <!-- Button (Double) -->
               <div class="control-group">
                 <label class="control-label" for="action"></label>
                 <div class="controls">
@@ -78,8 +87,14 @@
                 </div>
               </div>
             </div>
+            <input id="container" name="container" type="hidden" placeholder="Associated container" class="input-xlarge form-control">
           </form>
         </div>
       </div>
     </div>
+
+    <script language="javascript">
+        $("#mnuDatabases").addClass("active")
+    </script>
+
 {% endblock %}

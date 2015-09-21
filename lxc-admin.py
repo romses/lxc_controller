@@ -42,7 +42,7 @@ def listdatabases():
     con = mdb.connect(options['DB_HOST'], options['DB_USERNAME'], options['DB_PASSWORD'], options['DB']);
     cur = con.cursor()
 
-    entries=[]
+    entries={'container':[],'databases':[]}
     cur.execute('SELECT user,password,container FROM db')
     rows = cur.fetchall()
 
@@ -51,36 +51,64 @@ def listdatabases():
            'password':row[1],
            'container':row[2]
         }
-        entries.append(c)
+        entries['databases'].append(c)
+
+    con.close()
+
+    for container in lxc.list_containers(as_object=True):
+        if (container.name != "_template"):
+            entries['container'].append(container.name)
 
     return render_template('list_databases.tmpl',entries=entries)
+
+@app.route('/domains/list')
+@requires_auth
+def listdomains():
+    con = mdb.connect(options['DB_HOST'], options['DB_USERNAME'], options['DB_PASSWORD'], options['DB']);
+    cur = con.cursor()
+
+    entries={'container':[],'domains':[]}
+    cur.execute('SELECT domain,www,`ssl`,container,crtfile FROM domains')
+    rows = cur.fetchall()
+
+    for row in rows:
+        c={'domain':row[0],
+           'www':row[1],
+           'ssl':row[2],
+           'container':row[3],
+           'crtfile':row[4]
+        }
+        entries['domains'].append(c)
+
+    con.close()
+
+    for container in lxc.list_containers(as_object=True):
+        if (container.name != "_template"):
+            entries['container'].append(container.name)
+
+    return render_template('list_domains.tmpl',entries=entries)
 
 
 @app.route('/database/add',methods=['POST'])
 @requires_auth
 def adddatabases():
-    print("adddatabase")
-    print(request.form)
 
     if 'user' in request.form.keys():
         user=request.form['user']
     else:
         flash("Error: User not given")
-        print("Error: User not given")
         return redirect(request.headers.get("Referer"))
 
     if 'password' in request.form.keys():
         password=request.form['password']
     else:
         flash("Error: Password not given")
-        print("Error: Password not given")
         return redirect(request.headers.get("Referer"))
 
     if 'container' in request.form.keys():
         name=request.form['container']
     else:
         flash("Error: Container not given")
-        print("Error: Container not given")
         return redirect(request.headers.get("Referer"))
 
     try:
@@ -113,13 +141,13 @@ def deletedatabases(name):
         cur.execute("DROP DATABASE {db}".format(db=name))
         con.commit()
     except mdb.Error as e:
-        print(e)
+        logging.warn(e)
 
     try:
         cur.execute("DROP USER %s@'%%'",(name))
         con.commit()
     except mdb.Error as e:
-        print(e)
+        logging.warn(e)
 
     con.close()
 
@@ -276,7 +304,7 @@ def adminadd():
         cur.execute('INSERT INTO users (user,password) VALUES (%s,%s) ON DUPLICATE KEY UPDATE password=VALUES(password)',(request.form['user'],request.form['password']))
         con.commit()    
     except mdb.Error as e:
-        print(e)
+        logging.warn(e)
 
     con.close()
     return redirect(url_for('adminlist'))
@@ -366,14 +394,17 @@ def deldomain(name):
     updateHAProxy()
     return redirect('/container/edit/'+domain)
 
-@app.route('/domain/add/<name>', methods=['POST'])
+@app.route('/domain/add', methods=['POST'])
 @requires_auth
-def adddomain(name):
+def adddomain():
+    name=''
     domain=''
     www=0
     crt=''
     tmpfile='/etc/haproxy/certs/'+name+".crt"
 
+    if 'container' in request.form.keys():
+        name=request.form['container']
     if 'domain' in request.form.keys():
         domain=request.form['domain']
     if 'www' in request.form.keys():
