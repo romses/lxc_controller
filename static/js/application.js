@@ -36,7 +36,6 @@ function del(name){
 	});
 }
 
-
 function confirm(msg,action){
 	BootstrapDialog.show({
 		message: msg,
@@ -44,6 +43,26 @@ function confirm(msg,action){
 			label: 'Delete',
 			cssClass: 'btn-danger',
 			action: action
+		},{
+			label: 'Cancel',
+			cssClass: 'btn-primary',
+			action: function(dialogItself){
+				dialogItself.close();
+			}
+		}]
+	});
+}
+
+function confirmbackup(msg,action){
+	BootstrapDialog.show({
+		message: msg,
+		buttons: [{
+			label: 'Backup',
+			cssClass: 'btn-success',
+			action: function(dialogItself){
+				action();
+				dialogItself.close();
+                        }
 		},{
 			label: 'Cancel',
 			cssClass: 'btn-primary',

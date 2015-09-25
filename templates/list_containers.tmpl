@@ -27,7 +27,7 @@
             <button type="button" class="btn btn-primary" aria-label="Left Align" onclick="stop('{{ entry.name }}')">
               <span class="glyphicon glyphicon glyphicon-stop" aria-hidden="true"></span>
             </button>
-            <button type="button" class="btn btn-primary" aria-label="Left Align" onclick="alert('Not Implemented')">
+            <button type="button" class="btn btn-primary" aria-label="Left Align" onclick="confirmbackup('Create backup of {{entry.name}}',function(){$.get('/container/backup/{{entry.name}}')});">
               <span class="glyphicon glyphicon glyphicon-save" aria-hidden="true"></span>
             </button>
             <button type="button" class="btn btn-primary" aria-label="Left Align" onclick="alert('Not Implemented')">

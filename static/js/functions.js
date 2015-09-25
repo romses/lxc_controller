@@ -1,6 +1,7 @@
-function edituser(user,password,role){
+function edituser(user,password,container){
 	$("#userform #user").val(user)
 	$("#userform #password").val(password)
+	$("#userform #container").val(container)
 }
 
 function editdatabase(user,password,container){
@@ -12,9 +13,10 @@ function editdatabase(user,password,container){
 	$("#databaseform #container").val(container)
 }
 
-function clearuser(){
+function clearuser(name){
 	$("#userform #user").val("")
 	$("#userform #password").val("")
+	$("#userform #container").val(name)
 }
 
 function editdomain(domain,www,ssl,container){

@@ -1,0 +1,99 @@
+{% extends "layout.html" %}
+{% block body %}
+<script language="javascript" type="text/javascript" src="{{ url_for('static',filename='js/functions.js')}}"></script>
+    <table class="entries table table-stripped">
+      <tr>
+        <th>User</th><th>Password</th><th>Container</th><th>Actions</th>
+      </tr>
+    {% for entry in entries.user %}
+      <td>{{ entry.user }}</td>
+      <td>{{ entry.password }}</td>
+      <td>
+        <a href='/container/edit/{{ entry.container }}'>{{ entry.container }}</a>
+      </td>
+      <td>
+        <div class="btn-group-xs btn-group" role="group" aria-label="Center">        
+          <button type="button" class="btn btn-primary" aria-label="Left Align" data-toggle="modal" data-target="#adduser" onclick="edituser('{{ entry.user }}','{{ entry.password }}','{{entry.container}}')">
+            <span class="glyphicon glyphicon glyphicon-edit" aria-hidden="true"></span> Edit
+          </button>
+          <button type="button" class="btn btn-danger" aria-label="Left Align" onclick="confirm('Delete domain {{entry.domain}}',function(){location.href='/user/delete/{{entry.user }}'});">
+            <span class="glyphicon glyphicon glyphicon-trash" aria-hidden="true"></span> Delete
+          </button>
+        </div>
+      </td>
+    </tr>
+    {% else %}
+    {% endfor %}
+    </table>
+    <button type="button" class="btn btn-xs btn-primary" aria-label="Left Align" data-toggle="modal" data-target="#adduser" onclick="clearuser()">add FTP User</button>
+
+<!-- Modal Dialog -->
+
+    <div class="modal fade" id="adduser" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <form action="/user/add" method="post" id="userform">
+            <div class="modal-header">
+              <!-- Form Name -->
+              <legend>Add FTP User</legend>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="control-group">
+                    <label class="control-label" for="user">FTP User</label>
+                    <div class="controls">
+                      <input id="user" name="user" type="text" placeholder="username" class="input-xlarge form-control">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="control-group">
+                    <label class="control-label" for="user">Password</label>
+                    <div class="controls">
+                      <div class="input-group">
+                        <input id="password" name="password" type="text" placeholder="Password" class="input-xlarge form-control">
+                        <span class="input-group-btn">
+                          <button type="button" class="btn btn-default" id="userrandom">Random</button>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="control-group">
+                    <label class="control-label" for="container">Container</label>
+                    <div class="controls">
+                      <select id="container" name="container" size="1" class="input-xlarge form-control" placeholder="Associated container">
+{% for entry in entries.container %}
+                        <option value="{{ entry }}">{{ entry }}</option>
+{% endfor %}
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+            <!-- Button (Double) -->
+              <div class="control-group">
+                <label class="control-label" for="action"></label>
+                <div class="controls">
+                  <button id="action" name="action" class="btn btn-primary">Save</button>
+                  <button id="doublebutton2-0" name="doublebutton2-0" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script language="javascript">
+        $("#mnuUser").addClass("active")
+    </script>
+
+{% endblock %}

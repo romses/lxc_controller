@@ -9,15 +9,21 @@ from lib import lxclite
 import lxc
 import json
 import timestamp
+import datetime
 import bcrypt
 import logging
 import urllib
 import shutil                   #filecopy
 import os
 import subprocess               #execute shell commands
+from subprocess import Popen
 import time
 import tempfile
 from functools import wraps
+import socket
+import tarfile
+import _thread
+
 
 app = Flask(__name__)
 
@@ -61,6 +67,65 @@ def listdatabases():
 
     return render_template('list_databases.tmpl',entries=entries)
 
+@app.route('/backups/list')
+@requires_auth
+def listbackups():
+
+    #TODO
+    entries=[]
+
+    filenames=os.listdir(options['BACKUPPATH'])
+
+    for filename in sorted(filenames):
+        tokens=filename.split(".")[0]
+        tokens=tokens.split("-")
+        container=tokens[0]
+        date=tokens[3]+"."+tokens[2]+"."+tokens[1]+" "+tokens[4]+":"+tokens[5]+":"+tokens[6]
+#        date=date.split(".",1)[0]
+        c={'container':container,
+           'date':date,
+           'file':filename
+        }
+        entries.append(c)
+        
+
+    return render_template('list_backups.tmpl',entries=entries)
+
+@app.route('/backups/delete/<name>')
+@requires_auth
+def deletebackup(name):
+    print(options['BACKUPPATH']+name)
+    os.remove(options['BACKUPPATH']+name)
+    return redirect(request.headers.get("Referer"))
+
+@app.route('/user/list')
+@requires_auth
+def listusers():
+    con = mdb.connect(options['DB_HOST'], options['DB_USERNAME'], options['DB_PASSWORD'], options['DB']);
+    cur = con.cursor()
+
+
+    cur.execute('SELECT userid,passwd,container FROM ftpuser')
+    rows = cur.fetchall()
+
+    entries={'user':[],'container':[]}
+
+    for row in rows:
+        c={'user':row[0],
+           'password':row[1],
+           'container':row[2],
+        }
+        entries['user'].append(c)
+
+    con.close()
+
+    for container in lxc.list_containers(as_object=True):
+        if (container.name != "_template"):
+            entries['container'].append(container.name)
+
+
+    return render_template('list_users.tmpl',entries=entries)
+
 @app.route('/domains/list')
 @requires_auth
 def listdomains():
@@ -72,11 +137,16 @@ def listdomains():
     rows = cur.fetchall()
 
     for row in rows:
+        try:
+            ip=socket.gethostbyname(row[0])
+        except:
+            ip="not hosted"
         c={'domain':row[0],
            'www':row[1],
            'ssl':row[2],
            'container':row[3],
-           'crtfile':row[4]
+           'crtfile':row[4],
+           'ip':ip
         }
         entries['domains'].append(c)
 
@@ -266,12 +336,16 @@ def containeradd():
 @app.route('/container/delete/<name>')
 @requires_auth
 def containerdelete(name):
-    try:
-        lxclite.destroy(name)
-    except:
-        flash('You cannot delete a running container')
+    c=lxc.Container(name)
 
-    updateHAProxy()
+    if c.defined:
+        if not c.shutdown(30):
+            logging.warn("Failed to cleanly shutdown the container "+name+"... forcing.")
+            if notc.stop():
+                logging.error("Failed to kill the container")
+        c.destroy()
+
+        updateHAProxy()
 
     return redirect(url_for('index'))
 
@@ -344,26 +418,39 @@ def containerstop(name):
         logging.info("%s not existing",name)
         return 'Error'
 
-@app.route('/user/add/<name>', methods=['POST'])
+@app.route('/user/add', methods=['POST'])
 @requires_auth
-def adduser(name):
-    if 'user' not in request.form.keys():
-        return redirect('/container/edit/'+name)
-    if 'password' not in request.form.keys():
-        return redirect('/container/edit/'+name)
+def useradd():
+    if ('user' not in request.form.keys()) or request.form['user']=="":
+        flash('User is required')
+        return redirect(request.headers.get("Referer"))
+    if ('password' not in request.form.keys()) or request.form['password']=="":
+        flash('Password is required')
+        return redirect(request.headers.get("Referer"))
+    if ('container' not in request.form.keys()) or request.form['container']=="":
+        print("Container: ",container)
+        flash('container is required')
+        return redirect(request.headers.get("Referer"))
 
     user=request.form['user']
     password=request.form['password']
+    container=request.form['container']
 
+    adduser(user,password,container)
+
+    return redirect(request.headers.get("Referer"))
+
+
+
+def adduser(user,password,container):
     con = mdb.connect(options['DB_HOST'], options['DB_USERNAME'], options['DB_PASSWORD'], options['DB']);
     cur = con.cursor()
-    homedir="/var/lib/lxc/"+name+"/rootfs/var/www/html/"
-    cur.execute('INSERT INTO ftpuser (userid,passwd,container,homedir) VALUES (%s,%s,%s,%s) ON DUPLICATE KEY UPDATE passwd=VALUES(passwd)',(user,password,name,homedir))
+    homedir="/var/lib/lxc/"+container+"/rootfs/var/www/html/"
+    cur.execute('INSERT INTO ftpuser (userid,passwd,container,homedir) VALUES (%s,%s,%s,%s) ON DUPLICATE KEY UPDATE passwd=VALUES(passwd)',(user,password,container,homedir))
     con.commit()
     logging.info('User %s added',user)
     rows = cur.fetchall()
     con.close()
-    return redirect('/container/edit/'+name)
 
 @app.route('/user/delete/<name>')
 @requires_auth
@@ -377,7 +464,62 @@ def deluser(name):
     con.commit()
     rows = cur.fetchall()
     con.close()
-    return redirect('/container/edit/'+domain)
+    return redirect(request.headers.get("Referer"))
+#    return redirect('/container/edit/'+domain)
+
+@app.route('/container/backup/<container>')
+@requires_auth
+def backup(container):
+    _thread.start_new_thread(_backup,(container,))
+    return "Ok Backup started "
+    return redirect(request.headers.get("Referer"))
+
+
+def _backup(container):
+    logging.info('Backing up databases '+container)
+    con = mdb.connect(options['DB_HOST'], options['DB_USERNAME'], options['DB_PASSWORD'], options['DB']);
+    cur = con.cursor()
+    cur.execute('SELECT user,password FROM db WHERE container = %s',(container))
+    rows = cur.fetchall()
+
+    command = ['mysqldump', '-u'+options['DB_USERNAME'],"-p"+options['DB_PASSWORD'],"--databases"];
+
+    for row in rows:
+        command.append(row[0])
+
+    f=open('/var/lib/lxc/'+container+'/databasedump.sql',"w")
+    x=Popen(command,stdout=f)
+    x.wait()
+    f.close()
+
+
+    cur.execute('SELECT userid,passwd FROM ftpuser WHERE container = %s',(container))
+    rows = cur.fetchall()
+
+    f=open('/var/lib/lxc/'+container+'/passwd',"w")
+    for row in rows:
+        user=row[0]
+        password=row[1]
+        f.write(user+";"+password+";"+container+"\n")
+    f.close()
+
+    today = datetime.datetime.today()
+
+    filename=options['BACKUPPATH']+container+"-"+today.strftime("%Y-%b-%d-%H-%M-%S")+".tar.bz2.incomplete"
+
+    tar=tarfile.open(filename,'w:bz2')
+    tar.add('/var/lib/lxc/'+container,filter=prefixer)
+    tar.close()
+
+    os.rename(filename,filename.replace('.incomplete','',1))
+
+    return "Ok Backup written to "+filename
+    return redirect(request.headers.get("Referer"))
+    
+def prefixer(tarinfo):
+    tarinfo.name=tarinfo.name[12:]
+    return tarinfo
+
 
 @app.route('/domain/delete/<name>')
 @requires_auth
@@ -392,34 +534,42 @@ def deldomain(name):
     rows = cur.fetchall()
     con.close()
     updateHAProxy()
-    return redirect('/container/edit/'+domain)
+    return redirect(request.headers.get("Referer"))
+#    return redirect('/container/edit/'+domain)
 
 @app.route('/domain/add', methods=['POST'])
 @requires_auth
 def adddomain():
     name=''
     domain=''
-    www=0
+    www=1
     crt=''
-    tmpfile='/etc/haproxy/certs/'+name+".crt"
 
-    if 'container' in request.form.keys():
-        name=request.form['container']
-    if 'domain' in request.form.keys():
-        domain=request.form['domain']
-    if 'www' in request.form.keys():
-        www=1
-    if 'domain' in request.form.keys():
+    if 'container' not in request.form.keys():
+        flash('Container missing')
+        return redirect(request.headers.get("Referer"))
+    if 'domain' not in request.form.keys():
+        flash('domain missing')
+        return redirect(request.headers.get("Referer"))
+    if 'www' not in request.form.keys():
+        www=0
+    if 'certificate' in request.form.keys():
         crt=request.form['certificate']
-        if (crt == ""):
-            if os.path.isfile(tmpfile):
-                os.remove(tmpfile)
-            tmpfile=""
-        else:
-            if not os.path.isfile(crt):
-                f=open(tmpfile,"w")
-                f.write(crt)
-                f.close()
+
+    name=request.form['container']
+    domain=request.form['domain']
+    tmpfile='/etc/haproxy/certs/'+domain+".crt"
+
+    if (crt == ""):
+        if os.path.isfile(tmpfile):
+            os.remove(tmpfile)
+        tmpfile=""
+    else:
+        if not os.path.isfile(crt): #If a crt and not a path is given
+            f=open(tmpfile,"w")
+            f.write(crt)
+            f.close()
+
         
     con = mdb.connect(options['DB_HOST'], options['DB_USERNAME'], options['DB_PASSWORD'], options['DB']);
     cur = con.cursor()
@@ -428,7 +578,8 @@ def adddomain():
     rows = cur.fetchall()
     con.close()
     updateHAProxy()
-    return redirect('/container/edit/'+name)
+    return redirect(request.headers.get("Referer"))
+#    return redirect('/container/edit/'+name)
 
 @app.route('/lxc/ls')
 @requires_auth
@@ -638,7 +789,8 @@ def parse_config(filename):
               'LOG'           : '/var/log/lxc-admin.log',
               'LOGLEVEL'      : 'WARNING',
               'IMAGE_URL'     : 'http://images.linuxcontainers.org/meta/1.0/index-system',
-              'BIND'          : '127.0.0.1'
+              'BIND'          : '127.0.0.1',
+              'BACKUPPATH'    : '/var/lib/lxc-backups/'
               }
 
     for k in defaults.keys():
