@@ -677,6 +677,7 @@ def updateHAProxy():
                 ssldomains[row[0]]=row[3]
                 if(row[1]):
                     ssldomains['www.'+row[0]]=row[3]
+
     f=open('/etc/haproxy/domain2backend.map',"w")
 #Generate HTTP Frontends
     for k in domains.keys():
@@ -684,14 +685,22 @@ def updateHAProxy():
     f.write("macftp02.macrocom.de bk_config\n")
     f.close()
 
+    f=open("/etc/haproxy/domain2backend_ssl.map","w")
+    for k in ssldomains:
+         print(k+" "+ssldomains[k])
+         f.write(k+" bk_"+ssldomains[k]+"\n")
+    f.close()
 
     f = open("/etc/haproxy/haproxy.cfg","a")
+
 #Generate HTTPS Frontends
     if(len(ssldomains)>0):
         f.write("frontend https\n")
         f.write("\tmode http\n")
         f.write("\tbind 0.0.0.0:443 ssl")
-        f.write("\tuse_backend bk_"+ssldomains[k]+" if is_"+ssldomains[k]+"\n")
+        for k in sslcerts:
+            f.write(" crt "+k)
+        f.write("\n\tuse_backend %[req.hdr(host),lower,map(/etc/haproxy/domain2backend_ssl.map,bk_default)]\n\n")
 
 #Generate Backends
    
