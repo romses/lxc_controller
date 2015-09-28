@@ -35,7 +35,8 @@ listen stats 0.0.0.0:8080
         stats auth admin:secret
         stats admin if TRUE
 
-backend bk_default
-        mode http
-        server srvdefault 127.0.0.1:8888 check
+frontend http
+	mode http
+	bind 0.0.0.0:80
+	use_backend %[req.hdr(host),lower,map(/etc/haproxy/domain2backend.map,bk_default)]
 

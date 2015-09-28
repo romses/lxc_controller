@@ -3,13 +3,14 @@
 <script language="javascript" type="text/javascript" src="{{ url_for('static',filename='js/functions.js')}}"></script>
     <table class="entries table table-stripped">
       <tr>
-        <th>Container</th><th>Date</th><th>Actions</th>
+        <th>Container</th><th>Date</th><th>size</th><th>Actions</th>
       </tr>
     {% for entry in entries %}
       <td>
         <a href='/container/edit/{{ entry.container }}'>{{ entry.container }}</a>
       </td>
       <td>{{ entry.date }}</td>
+      <td>{{ entry.size }} MIB</td>
       <td>
         <div class="btn-group-xs btn-group" role="group" aria-label="Center">        
           <button type="button" class="btn btn-primary" aria-label="Left Align" onclick="confirm('Restore backup {{entry.name}} ({{entry.date}})',function(){location.href='/backups/restore/{{entry.file}}'});">

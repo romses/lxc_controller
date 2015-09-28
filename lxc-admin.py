@@ -75,16 +75,20 @@ def listbackups():
     entries=[]
 
     filenames=os.listdir(options['BACKUPPATH'])
+    sumsize=0
 
     for filename in sorted(filenames):
         tokens=filename.split(".")[0]
         tokens=tokens.split("-")
         container=tokens[0]
         date=tokens[3]+"."+tokens[2]+"."+tokens[1]+" "+tokens[4]+":"+tokens[5]+":"+tokens[6]
+        size=os.stat(options['BACKUPPATH']+"/"+filename)
+        size=str(round(size.st_size/(1024*1024),2))
 #        date=date.split(".",1)[0]
         c={'container':container,
            'date':date,
-           'file':filename
+           'file':filename,
+           'size':size
         }
         entries.append(c)
         
@@ -476,6 +480,7 @@ def backup(container):
 
 
 def _backup(container):
+    print("Backup started")
     logging.info('Backing up databases '+container)
     con = mdb.connect(options['DB_HOST'], options['DB_USERNAME'], options['DB_PASSWORD'], options['DB']);
     cur = con.cursor()
@@ -503,6 +508,19 @@ def _backup(container):
         f.write(user+";"+password+";"+container+"\n")
     f.close()
 
+    cur.execute('SELECT domain,www,`ssl`,crtfile FROM domains WHERE container = %s',(container))
+    rows = cur.fetchall()
+
+    f=open('/var/lib/lxc/'+container+'/domains',"w")
+    for row in rows:
+        domain=row[0]
+        www=row[1]
+        ssl=row[2]
+        crtfile=row[3]
+        f.write(domain+";"+str(www)+";"+ssl+";"+crtfile+"\n")
+    f.close()
+
+
     today = datetime.datetime.today()
 
     filename=options['BACKUPPATH']+container+"-"+today.strftime("%Y-%b-%d-%H-%M-%S")+".tar.bz2.incomplete"
@@ -512,6 +530,11 @@ def _backup(container):
     tar.close()
 
     os.rename(filename,filename.replace('.incomplete','',1))
+
+    os.remove('/var/lib/lxc/'+container+'/domains')
+    os.remove('/var/lib/lxc/'+container+'/passwd')
+    os.remove('/var/lib/lxc/'+container+'/databasedump.sql')
+    print("Backup ended")
 
     return "Ok Backup written to "+filename
     return redirect(request.headers.get("Referer"))
@@ -631,7 +654,6 @@ def updateHAProxy():
     logging.info("Generating HAProxy configuration")
     shutil.copy2('haproxy.stub', '/etc/haproxy/haproxy.cfg')
 
-    f = open("/etc/haproxy/haproxy.cfg","a")
 
     con = mdb.connect(options['DB_HOST'], options['DB_USERNAME'], options['DB_PASSWORD'], options['DB']);
     cur = con.cursor()
@@ -655,36 +677,24 @@ def updateHAProxy():
                 ssldomains[row[0]]=row[3]
                 if(row[1]):
                     ssldomains['www.'+row[0]]=row[3]
-
+    f=open('/etc/haproxy/domain2backend.map',"w")
 #Generate HTTP Frontends
-    f.write("frontend http\n")
-    f.write("\tmode http\n")
-    f.write("\tbind 0.0.0.0:80\n")
-
     for k in domains.keys():
-        f.write("\tacl is_"+domains[k]+" hdr_dom(host) -i "+k+"\n")
-        f.write("\tuse_backend bk_"+domains[k]+" if is_"+domains[k]+"\n")
-    f.write("\tacl is_config hdr_dom(host) -i macftp02.macrocom.de\n")
-    f.write("\tuse_backend bk_config if is_config\n\n")
+        f.write(k+" bk_"+domains[k]+"\n")
+    f.write("macftp02.macrocom.de bk_config\n")
+    f.close()
 
+
+    f = open("/etc/haproxy/haproxy.cfg","a")
 #Generate HTTPS Frontends
     if(len(ssldomains)>0):
         f.write("frontend https\n")
         f.write("\tmode http\n")
         f.write("\tbind 0.0.0.0:443 ssl")
-
-        for crt in sslcerts:
-            f.write(" crt "+crt)
-        f.write("\n")
-
-        for k in ssldomains.keys():
-            f.write("\tacl is_"+ssldomains[k]+" hdr_dom(host) -i "+k+"\n")
-            f.write("\tuse_backend bk_"+ssldomains[k]+" if is_"+ssldomains[k]+"\n")
-#        f.write("\tacl is_config hdr_dom(host) -i macftp02.macrocom.de\n")
-#        f.write("\tuse_backend bk_config if is_config\n\n")
+        f.write("\tuse_backend bk_"+ssldomains[k]+" if is_"+ssldomains[k]+"\n")
 
 #Generate Backends
-    
+   
     for k in backends:
         f.write('backend bk_'+k+"\n")
         f.write('\tmode http\n')
