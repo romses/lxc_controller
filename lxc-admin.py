@@ -15,7 +15,7 @@ import logging
 import urllib
 import shutil                   #filecopy
 import os
-import subprocess               #execute shell commands
+import subprocess,shlex               #execute shell commands
 from subprocess import Popen
 import time
 import tempfile
@@ -74,32 +74,32 @@ def listbackups():
     #TODO
     entries=[]
 
-    filenames=os.listdir(options['BACKUPPATH'])
+    containers=os.listdir(options['BACKUPPATH'])
     sumsize=0
 
-    for filename in sorted(filenames):
-        tokens=filename.split(".")[0]
-        tokens=tokens.split("-")
-        container=tokens[0]
-        date=tokens[3]+"."+tokens[2]+"."+tokens[1]+" "+tokens[4]+":"+tokens[5]+":"+tokens[6]
-        size=os.stat(options['BACKUPPATH']+"/"+filename)
-        size=str(round(size.st_size/(1024*1024),2))
-#        date=date.split(".",1)[0]
-        c={'container':container,
-           'date':date,
-           'file':filename,
-           'size':size
-        }
-        entries.append(c)
+    for container in sorted(containers):
+        for filename in os.listdir(options['BACKUPPATH']+"/"+container):
+            tokens=filename.split(".")[0]
+            tokens=tokens.split("-")
+            date=tokens[2]+"."+tokens[1]+"."+tokens[0]+" "+tokens[3]+":"+tokens[4]+":"+tokens[5]
+            size=os.stat(options['BACKUPPATH']+"/"+container+"/"+filename)
+            size=str(round(size.st_size/(1024*1024),2))
+##            date=date.split(".",1)[0]
+            c={'container':container,
+               'date':date,
+               'file':container+"/"+filename,
+               'size':size
+            }
+            entries.append(c)
         
 
     return render_template('list_backups.tmpl',entries=entries)
 
-@app.route('/backups/delete/<name>')
+@app.route('/backups/delete/<container>/<name>')
 @requires_auth
-def deletebackup(name):
-    print(options['BACKUPPATH']+name)
-    os.remove(options['BACKUPPATH']+name)
+def deletebackup(container,name):
+#    print(options['BACKUPPATH']+name)
+    os.remove(options['BACKUPPATH']+"/"+container+"/"+name)
     return redirect(request.headers.get("Referer"))
 
 @app.route('/user/list')
@@ -432,7 +432,7 @@ def useradd():
         flash('Password is required')
         return redirect(request.headers.get("Referer"))
     if ('container' not in request.form.keys()) or request.form['container']=="":
-        print("Container: ",container)
+#        print("Container: ",container)
         flash('container is required')
         return redirect(request.headers.get("Referer"))
 
@@ -480,50 +480,55 @@ def backup(container):
 
 
 def _backup(container):
-    print("Backup started")
     logging.info('Backing up databases '+container)
+
     con = mdb.connect(options['DB_HOST'], options['DB_USERNAME'], options['DB_PASSWORD'], options['DB']);
     cur = con.cursor()
-    cur.execute('SELECT user,password FROM db WHERE container = %s',(container))
+    cur.execute('SELECT * FROM db WHERE container = %s',(container))
     rows = cur.fetchall()
 
     command = ['mysqldump', '-u'+options['DB_USERNAME'],"-p"+options['DB_PASSWORD'],"--databases"];
 
+    f=open('/var/lib/lxc/'+container+'/databasedump.sql',"w")
     for row in rows:
         command.append(row[0])
-
-    f=open('/var/lib/lxc/'+container+'/databasedump.sql',"w")
     x=Popen(command,stdout=f)
     x.wait()
-    f.close()
 
-
-    cur.execute('SELECT userid,passwd FROM ftpuser WHERE container = %s',(container))
-    rows = cur.fetchall()
-
-    f=open('/var/lib/lxc/'+container+'/passwd',"w")
     for row in rows:
-        user=row[0]
-        password=row[1]
-        f.write(user+";"+password+";"+container+"\n")
-    f.close()
+        sql="INSERT INTO db (user,password,container) VALUES ('{}','{}','{}') ON DUPLICATE KEY UPDATE user=VALUES(user), password=VALUES(password), container=VALUES(container);\n"
+        f.write(sql.format(row[0],row[1],row[2]))
+        sql="GRANT USAGE ON *.* to '{}'@'%' IDENTIFIED BY '{}';\n"
+        f.write(sql.format(row[0],row[1]))
+        sql="GRANT ALL ON {}.* to '{}'@'%' IDENTIFIED BY '{}';\n"
+        f.write(sql.format(row[0],row[0],row[1]))
 
-    cur.execute('SELECT domain,www,`ssl`,crtfile FROM domains WHERE container = %s',(container))
+
+    cur.execute('SELECT * FROM ftpuser WHERE container = %s',(container))
     rows = cur.fetchall()
 
-    f=open('/var/lib/lxc/'+container+'/domains',"w")
+    for row in rows:
+        sql="INSERT INTO ftpuser (userid,passwd,container,uid,gid,homedir,shell) VALUES ('{}','{}','{}',{},{},'{}','{}') ON DUPLICATE KEY UPDATE userid=VALUES(userid), passwd=VALUES(passwd), container=VALUES(container), uid=VALUES(uid), gid=VALUES(gid),homedir=VALUES(homedir),shell=VALUES(shell);\n"
+        f.write(sql.format(row[0],row[1],row[2],row[3],row[4],row[5],row[6]))
+
+    cur.execute('SELECT * FROM domains WHERE container = %s',(container))
+    rows = cur.fetchall()
+
     for row in rows:
         domain=row[0]
         www=row[1]
         ssl=row[2]
         crtfile=row[3]
-        f.write(domain+";"+str(www)+";"+ssl+";"+crtfile+"\n")
+        sql="INSERT INTO domains (domain,www,`ssl`,container,crtfile) VALUES ('{}',{},'{}','{}','{}') ON DUPLICATE KEY UPDATE domain=VALUES(domain), www=VALUES(www), `ssl`=VALUES(`ssl`), container=VALUES(container), crtfile=VALUES(crtfile);\n"
+        f.write(sql.format(domain,www,ssl,container,crtfile))
     f.close()
-
 
     today = datetime.datetime.today()
 
-    filename=options['BACKUPPATH']+container+"-"+today.strftime("%Y-%b-%d-%H-%M-%S")+".tar.bz2.incomplete"
+    filename=options['BACKUPPATH']+"/"+container+"/"+today.strftime("%Y-%b-%d-%H-%M-%S")+".tar.bz2.incomplete"
+
+    if not os.path.isdir(options['BACKUPPATH']+"/"+container+"/"):
+        os.mkdir(options['BACKUPPATH']+"/"+container+"/")
 
     tar=tarfile.open(filename,'w:bz2')
     tar.add('/var/lib/lxc/'+container,filter=prefixer)
@@ -531,18 +536,95 @@ def _backup(container):
 
     os.rename(filename,filename.replace('.incomplete','',1))
 
-    os.remove('/var/lib/lxc/'+container+'/domains')
-    os.remove('/var/lib/lxc/'+container+'/passwd')
     os.remove('/var/lib/lxc/'+container+'/databasedump.sql')
-    print("Backup ended")
 
-    return "Ok Backup written to "+filename
+
+    return "Ok"
     return redirect(request.headers.get("Referer"))
     
 def prefixer(tarinfo):
     tarinfo.name=tarinfo.name[12:]
+    tokens=tarinfo.name.split("/")
+    if(len(tokens)>3):
+        if(tokens[3]=="proc"):
+            return None
+        if(tokens[3]=="sys"):
+            return None
+        if(tokens[3]=="run"):
+            return None
+
     return tarinfo
 
+@app.route('/container/restore/<container>/<file>')
+@requires_auth
+def restorecontainer(container,file):
+    _thread.start_new_thread(_restore,(container,file,))
+#    return redirect('/')
+    return redirect(request.headers.get("Referer"))
+
+def _restore(container,file):
+    cmd='btrfs subvolume list /var/lib/lxc'
+    subvolumes=os.popen(cmd).readlines()
+
+    create_subvolume=1
+
+#    container=file.split("-")[0]
+
+    for subvolume in subvolumes:
+        if (subvolume.split(" ")[8].strip()) == container:
+            create_subvolume=0
+
+    if(create_subvolume):
+        if not os.path.isdir("/var/lib/lxc/"+container):
+            os.makedirs("/var/lib/lxc/"+container)
+        cmd="btrfs subvolume create /var/lib/lxc/"+container+"/rootfs"
+        os.popen(cmd)
+
+    today = datetime.datetime.today()
+
+    f=open("/var/lib/lxc/"+container+"/.lockfile","w")
+    f.write(today.strftime("%Y-%b-%d-%H-%M-%S"))
+    f.close()
+
+    cmd='tar xf '+options['BACKUPPATH']+"/"+container+"/"+file+" -C /var/lib/lxc/"
+    os.popen(cmd).readlines()
+
+    f=open("/var/lib/lxc/"+container+"/domains","r")
+    domains=f.readlines()
+    f.close()
+
+    con = mdb.connect(options['DB_HOST'], options['DB_USERNAME'], options['DB_PASSWORD'], options['DB']);
+    cur = con.cursor()
+
+    for domain in domains:
+        tokens=domain.strip().split(";")
+        domain=tokens[0]
+        www=int(tokens[1])
+        tmpfile=tokens[2]
+        crtfile=tokens[3]
+        try:
+            cur.execute('INSERT INTO domains (domain,www,`ssl`,Container,crtfile) VALUES (%s,%s,%s,%s) ON DUPLICATE KEY UPDATE www=VALUES(www), `ssl`=VALUES(`ssl`), Container=VALUES(Container)',(domain,www,tmpfile,container,crtfile))
+            con.commit()
+        except  mdb.Error as e:
+            logging.warn("Creating "+row[0]+" failed")
+            logging.warn(e)
+
+        rows = cur.fetchall()
+    con.close()
+    updateHAProxy()
+
+#    con = mdb.connect(options['DB_HOST'], options['DB_USERNAME'], options['DB_PASSWORD'], options['DB']);
+#    cur = con.cursor()
+#    cur.execute('INSERT INTO domains (domain,www,`ssl`,Container) VALUES (%s,%s,%s,%s) ON DUPLICATE KEY UPDATE www=VALUES(www), `ssl`=VALUES(`ssl`), Container=VALUES(Contai$
+#    con.commit()
+#    rows = cur.fetchall()
+#    con.close()
+#    updateHAProxy()
+
+    os.remove("/var/lib/lxc/"+container+"/.lockfile")
+
+    return "Ok"
+    return redirect(request.headers.get("Referer"))
 
 @app.route('/domain/delete/<name>')
 @requires_auth
@@ -593,7 +675,6 @@ def adddomain():
             f.write(crt)
             f.close()
 
-        
     con = mdb.connect(options['DB_HOST'], options['DB_USERNAME'], options['DB_PASSWORD'], options['DB']);
     cur = con.cursor()
     cur.execute('INSERT INTO domains (domain,www,`ssl`,Container) VALUES (%s,%s,%s,%s) ON DUPLICATE KEY UPDATE www=VALUES(www), `ssl`=VALUES(`ssl`), Container=VALUES(Container)',(domain,www,tmpfile,name))
@@ -687,7 +768,7 @@ def updateHAProxy():
 
     f=open("/etc/haproxy/domain2backend_ssl.map","w")
     for k in ssldomains:
-         print(k+" "+ssldomains[k])
+#         print(k+" "+ssldomains[k])
          f.write(k+" bk_"+ssldomains[k]+"\n")
     f.close()
 

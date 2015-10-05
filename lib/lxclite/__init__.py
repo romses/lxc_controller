@@ -80,7 +80,8 @@ def info(container):
     '''
     if not exists(container): raise ContainerDoesntExists('Container {} does not exist!'.format(container))
 
-    output = _run('lxc-info -qHn {}'.format(container), output=True).splitlines()
+    output = _run('lxc-info -qHn {}'.format(container), output=True)
+    output = output.splitlines()
     name = output[0].split()[1]
     state = output[1].split()[1]
 

@@ -13,7 +13,7 @@
       <td>{{ entry.size }} MIB</td>
       <td>
         <div class="btn-group-xs btn-group" role="group" aria-label="Center">        
-          <button type="button" class="btn btn-primary" aria-label="Left Align" onclick="confirm('Restore backup {{entry.name}} ({{entry.date}})',function(){location.href='/backups/restore/{{entry.file}}'});">
+          <button type="button" class="btn btn-primary" aria-label="Left Align" onclick="confirm('Restore backup {{entry.name}} ({{entry.date}})',function(){location.href='/container/restore/{{entry.file}}'});">
             <span class="glyphicon glyphicon glyphicon-edit" aria-hidden="true"></span> Restore
           </button>
           <button type="button" class="btn btn-danger" aria-label="Left Align" onclick="confirm('Delete backup {{entry.name}} ({{entry.date}})',function(){location.href='/backups/delete/{{entry.file}}'});">
