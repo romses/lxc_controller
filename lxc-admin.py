@@ -349,6 +349,20 @@ def containerdelete(name):
                 logging.error("Failed to kill the container")
         c.destroy()
 
+        con = mdb.connect(options['DB_HOST'], options['DB_USERNAME'], options['DB_PASSWORD'], options['DB']);
+        cur = con.cursor()
+        cur.execute("SELECT user from db where container=%s",(name))
+        rows = cur.fetchall()
+
+        for row in rows:
+            cur.execute("DROP DATABASE %s",(row[0]))
+
+        cur.execute("DELETE FROM db WHERE container=%s",(container))
+        cur.execute("DELETE FROM domains WHERE container=%s",(container))
+        cur.execute("DELETE FROM ftpuser WHERE container=%s",(container))
+
+        con.close()
+
         updateHAProxy()
 
     return redirect(url_for('index'))
@@ -495,6 +509,11 @@ def _backup(container):
     x=Popen(command,stdout=f)
     x.wait()
 
+#    f.close()
+#    f=open('/var/lib/lxc/'+container+'/database.sql',"w")
+
+    f.write("use lxc;\n")
+
     for row in rows:
         sql="INSERT INTO db (user,password,container) VALUES ('{}','{}','{}') ON DUPLICATE KEY UPDATE user=VALUES(user), password=VALUES(password), container=VALUES(container);\n"
         f.write(sql.format(row[0],row[1],row[2]))
@@ -535,9 +554,7 @@ def _backup(container):
     tar.close()
 
     os.rename(filename,filename.replace('.incomplete','',1))
-
     os.remove('/var/lib/lxc/'+container+'/databasedump.sql')
-
 
     return "Ok"
     return redirect(request.headers.get("Referer"))
@@ -589,38 +606,12 @@ def _restore(container,file):
     cmd='tar xf '+options['BACKUPPATH']+"/"+container+"/"+file+" -C /var/lib/lxc/"
     os.popen(cmd).readlines()
 
-    f=open("/var/lib/lxc/"+container+"/domains","r")
-    domains=f.readlines()
-    f.close()
+    cmd='mysql -u'+options['DB_USERNAME']+' -p'+options['DB_PASSWORD']+" < "+"/var/lib/lxc/{}/databasedump.sql".format(container)
+    os.popen(cmd).readlines()
 
-    con = mdb.connect(options['DB_HOST'], options['DB_USERNAME'], options['DB_PASSWORD'], options['DB']);
-    cur = con.cursor()
-
-    for domain in domains:
-        tokens=domain.strip().split(";")
-        domain=tokens[0]
-        www=int(tokens[1])
-        tmpfile=tokens[2]
-        crtfile=tokens[3]
-        try:
-            cur.execute('INSERT INTO domains (domain,www,`ssl`,Container,crtfile) VALUES (%s,%s,%s,%s) ON DUPLICATE KEY UPDATE www=VALUES(www), `ssl`=VALUES(`ssl`), Container=VALUES(Container)',(domain,www,tmpfile,container,crtfile))
-            con.commit()
-        except  mdb.Error as e:
-            logging.warn("Creating "+row[0]+" failed")
-            logging.warn(e)
-
-        rows = cur.fetchall()
-    con.close()
     updateHAProxy()
 
-#    con = mdb.connect(options['DB_HOST'], options['DB_USERNAME'], options['DB_PASSWORD'], options['DB']);
-#    cur = con.cursor()
-#    cur.execute('INSERT INTO domains (domain,www,`ssl`,Container) VALUES (%s,%s,%s,%s) ON DUPLICATE KEY UPDATE www=VALUES(www), `ssl`=VALUES(`ssl`), Container=VALUES(Contai$
-#    con.commit()
-#    rows = cur.fetchall()
-#    con.close()
-#    updateHAProxy()
-
+    os.remove("/var/lib/lxc/"+container+"/databasedump.sql")
     os.remove("/var/lib/lxc/"+container+"/.lockfile")
 
     return "Ok"
