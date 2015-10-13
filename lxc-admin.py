@@ -355,11 +355,16 @@ def containerdelete(name):
         rows = cur.fetchall()
 
         for row in rows:
-            cur.execute("DROP DATABASE %s",(row[0]))
+            cur.execute("DROP DATABASE {db}".format(db=row[0]))
+#            cur.execute('DELETE FROM db where user=%s',(row[0]))
+            con.commit()
 
-        cur.execute("DELETE FROM db WHERE container=%s",(container))
-        cur.execute("DELETE FROM domains WHERE container=%s",(container))
-        cur.execute("DELETE FROM ftpuser WHERE container=%s",(container))
+        cur.execute("DELETE FROM db      WHERE container=%s",(name))
+        con.commit()
+        cur.execute("DELETE FROM domains WHERE container=%s",(name))
+        con.commit()
+        cur.execute("DELETE FROM ftpuser WHERE container=%s",(name))
+        con.commit()
 
         con.close()
 
